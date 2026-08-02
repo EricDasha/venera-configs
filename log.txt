@@ -1,0 +1,1250 @@
+Logs
+
+error ComicSource 2026-08-02 20:18:53.253853 
+SyntaxError: unexpected end of string
+    at Nhentai:454:21
+
+#0      FlutterQjs.evaluate (package:flutter_qjs/src/engine.dart:176)
+#1      JsEngine.runCode (package:venera_next/foundation/js_engine.dart:334)
+#2      ComicSourceParser.parse (package:venera_next/features/comic_source/parser.dart:120)
+#3      ComicSourceManager.doInit (package:venera_next/features/comic_source/comic_source_manager.dart:133)
+<asynchronous suspension>
+#4      Init.init (package:venera_next/foundation/init.dart:37)
+<asynchronous suspension>
+#5      _FutureInit.wait (package:venera_next/app_runtime/init.dart:34)
+<asynchronous suspension>
+#6      Future.wait.<anonymous closure> (dart:async/future.dart:546)
+<asynchronous suspension>
+#7      init (package:venera_next/app_runtime/init.dart:77)
+<asynchronous suspension>
+#8      main.<anonymous closure>.<anonymous closure> (package:venera_next/main.dart:36)
+<asynchronous suspension>
+
+
+error ComicSource 2026-08-02 20:18:53.265440 
+SyntaxError: unexpected end of string
+    at Nhentai:458:29
+
+#0      FlutterQjs.evaluate (package:flutter_qjs/src/engine.dart:176)
+#1      JsEngine.runCode (package:venera_next/foundation/js_engine.dart:334)
+#2      ComicSourceParser.parse (package:venera_next/features/comic_source/parser.dart:120)
+#3      ComicSourceManager.doInit (package:venera_next/features/comic_source/comic_source_manager.dart:133)
+<asynchronous suspension>
+#4      Init.init (package:venera_next/foundation/init.dart:37)
+<asynchronous suspension>
+#5      _FutureInit.wait (package:venera_next/app_runtime/init.dart:34)
+<asynchronous suspension>
+#6      Future.wait.<anonymous closure> (dart:async/future.dart:546)
+<asynchronous suspension>
+#7      init (package:venera_next/app_runtime/init.dart:77)
+<asynchronous suspension>
+#8      main.<anonymous closure>.<anonymous closure> (package:venera_next/main.dart:36)
+<asynchronous suspension>
+
+
+info Network 2026-08-02 20:18:53.324580 
+GET https://www.copy20.com/search
+headers:
+{User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:18:53.324624 
+GET https://api.copy-manga.com/api/v3/system/network2?platform=3
+headers:
+{User-Agent: COPY/3.0.6, source: copyApp, deviceinfo: 6018119V-1974, dt: 2026.08.02, platform: 3, referer: com.copymanga.app-3.0.6, version: 3.0.6, device: YD1J.727137.055, pseudoid: XtVSgjOWbBQyx8hm, Accept: application/json, region: 0, authorization: Token c340eadac771b3e830dcc1e08355c24e33655091, umstring: b4c89ca4104ea9a97750314d791520ac, x-auth-timestamp: 1785673133, x-auth-signature: 1d87b7e647840b2210a94e881e400fcec19258dc3d9bc39ba92bdbf585695755}
+data:
+null
+
+info Network 2026-08-02 20:18:53.324639 
+GET https://rup4a04-c02.tos-cn-hongkong.bytepluses.com/newsvr-2025.txt
+headers:
+{Accept: */*, Accept-Encoding: gzip, deflate, br, zstd, Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7, Connection: keep-alive, Origin: https://localhost, Referer: https://localhost/, Sec-Fetch-Dest: empty, Sec-Fetch-Mode: cors, Sec-Fetch-Site: cross-site, X-Requested-With: com.example.app, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+error Network 2026-08-02 20:18:55.781629 
+GET https://www.copy20.com/search
+DioException [unknown]: null
+Error: [RhttpConnectionException] Connection error. URL: https://www.copy20.com/search (hyper_util::client::legacy::Error(Connect, Custom { kind: Other, error: Os { code: 104, kind: ConnectionReset, message: "Connection reset by peer" } }))
+null
+
+info Network 2026-08-02 20:18:56.636782 
+Response https://rup4a04-c02.tos-cn-hongkong.bytepluses.com/newsvr-2025.txt 200
+headers:
+{accept-ranges: bytes, access-control-allow-credentials: true, access-control-allow-methods: GET, access-control-allow-origin: *, access-control-max-age: 3600, content-length: 451, content-type: text/plain, date: Sun, 02 Aug 2026 12:18:57 GMT, etag: "aa4561437006e276402f50332d778e4c", last-modified: Fri, 29 May 2026 03:58:22 GMT, server: TosServer, x-tos-create-time: Fri, 29 May 2026 03:58:22 GMT, x-tos-hash-crc64ecma: 9109789646350212367, x-tos-id-2: 5418076f35b19ab86a6f35b1-b6c8037-1wqV9d-GO-ch-tos-1az-front-aza-2, x-tos-request-id: 5418076f35b19ab86a6f35b1-b6c8037-1wqV9d-GO-ch-tos-1az-front-aza-2, x-tos-server-time: 2, x-tos-storage-class: STANDARD}
+X+bnzYIcwF6C7Rd3T7njPDNH08zsH9zyqCrrjCr7qcnHb1LsmIZGIHtrNVR/GiraHE6OuhvrxEzwciVvhdU0I9OYcmWTxF1K7fLfcwkn7kMQg2DZ2qpE7dKGkqKCmQijaSUOswxL1/p9pSVe/vRYEzbB5pfcAB6Yz/zVVIendBJK629QiqQndRXM9bijtZuYQGhQS91cgMlYTujl5ouyy85KZvbdoT5y5xdlQSRMA5/8Pb/+EfGpFWkk1iziXNJycvvb5trdlvfe73KhS/dYpJSrilRGR07XaWi04FhMV2i47SM9s5VWX8t42K8yme8fiy+6NNnOlgeB1evbNVagiWJft5d0TcA4ydIkTZxvaf3GmS/8urE/Iu/FnN/FmYTgMZA7DhYhjab0t3qIygNMBoaU7VrLlK14Eme4pRD7bSbzoayRhkSSe1MeB4Mw2DtQ
+
+info Network 2026-08-02 20:18:56.646312 
+GET https://www.cdnhjk.net/daily?user_id=6073657
+headers:
+{Accept: */*, Accept-Encoding: gzip, deflate, br, zstd, Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7, Connection: keep-alive, Origin: https://localhost, Referer: https://localhost/, Sec-Fetch-Dest: empty, Sec-Fetch-Mode: cors, Sec-Fetch-Site: cross-site, X-Requested-With: com.example.app, Authorization: Bearer, Sec-Fetch-Storage-Access: active, token: ce69fe04077529a12acc80fb197a90d6, tokenparam: 1785673136,2.0.16, User-Agent: Mozilla/5.0 (Linux; Android 10; K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/130.0.0.0 Mobile Safari/537.36, cookie: theme=light; AVS=q7tpmo919v3f1ibu300dlpnklq; __cflb=02DiuE2Zf1N6nw9KjUSdgCHu1ENVDihv1s97ee1m8xAfW; ipcountry=TW; ipm5=f294da715ddc4e3ac82eeb017b27e98e}
+data:
+null
+
+info Network 2026-08-02 20:18:56.646667 
+GET https://www.cdnhjk.net/setting?app_img_shunt=1&express=
+headers:
+{Accept: */*, Accept-Encoding: gzip, deflate, br, zstd, Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7, Connection: keep-alive, Origin: https://localhost, Referer: https://localhost/, Sec-Fetch-Dest: empty, Sec-Fetch-Mode: cors, Sec-Fetch-Site: cross-site, X-Requested-With: com.example.app, Authorization: Bearer, Sec-Fetch-Storage-Access: active, token: ce69fe04077529a12acc80fb197a90d6, tokenparam: 1785673136,2.0.16, User-Agent: Mozilla/5.0 (Linux; Android 10; K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/130.0.0.0 Mobile Safari/537.36, cookie: theme=light; AVS=q7tpmo919v3f1ibu300dlpnklq; __cflb=02DiuE2Zf1N6nw9KjUSdgCHu1ENVDihv1s97ee1m8xAfW; ipcountry=TW; ipm5=f294da715ddc4e3ac82eeb017b27e98e}
+data:
+null
+
+info Network 2026-08-02 20:18:57.742297 
+Response https://www.cdnhjk.net/setting?app_img_shunt=1&express= 200
+headers:
+{date: Sun, 02 Aug 2026 12:18:57 GMT, content-type: application/json; charset=utf-8;, cf-ray: a24d07376fd78ade-AMS, server: cloudflare, expires: Thu, 19 Nov 1981 08:52:00 GMT, cache-control: no-store, no-cache, must-revalidate, pragma: no-cache, access-control-allow-origin: https://localhost, access-control-allow-credentials: true, access-control-allow-methods: GET, POST, OPTIONS, access-control-allow-headers: Content-Type, Authorization, Tokenparam, Token, set-cookie: [ipcountry=CN; path=/, ipm5=215f06b2fb0a57726f98639c84d48c2d; path=/], last-modified: Sun, 02 Aug 2026 12:18:57 GMT, vary: Accept-Encoding, alt-svc: h3=":443"; ma=86400, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=SbL6MHuiCRa0UphpScuWUn1Fw1%2FzLNfE8RlDC5FFR%2FOY2kkO7nonYjRIkve5xyn13%2BnJGSTvJrfWvUSt52w62nxdSXaC2XQi0mqFIcsqLC2JqkwIpWAxScaM2a13Sxfzz2lagcqyLShoDoIC2Q%3D%3D"}]}, cf-cache-status: DYNAMIC}
+{"code":200,"data":"i8SVyxPE7CfD8CFNBk+EamCF518DUyFoDmpb3qmypN\/9S6k47gJbCnmVCRZSTQF2+tDWcxKw078Rd4kyaE8JDy1p1NDX66TVdcOXdHmuBCaYG4jbPe76Dp1dCoX6a7DfHvWTAzh0yyvD21+MUsyt7C2QQ4\/jUagIBGwtRTc9AATIRnefIf\/cqcI\/PBSHf5xdx+qey88ZMrYBCtXBfxJqvHTy+emD7OIo358GB7A+bLpkTEAA3adly\/Nk7H0mBLL8u+IEC22Z5pTORitxnMllHFFhcMVyPMGgpUWZ3WLrlvMhW7Iw+H2WBAD9iFNH3Ye1D\/C7pD8spfBK0lRFJyjje27ofWeW90wBUyAdMTJzEcuV9156FdpAIM8RuVy8nvjD+tDWcxKw078Rd4kyaE8JDy1p1NDX66TVdcOXdHmuBCaYG4jbPe76Dp1dCoX6a7DfHvWTAzh0yyvD21+MUsyt7C2QQ4\/jUagIBGwtRTc9AARkZruTfkQobeOxim4uyyOnJVDpjZkuZbosoNTq5x8jXNTP4fcF0\/N0JcCqWIhI4mGKS4HvuQ6pWgggbFaef7WAXfnXSdGUa9M9CCn6gJm8mJZO\/dpsc4txmux5a3EQUYrOUlkfMdvOkRQwrAyh12U2ymYxggLS5VF9KWRjzDD5kQrn+RlqLxkQAFjd7x\/YZmqn2AfBY66Rbm1icIAdvKEVmrjfFMu9h4uobTvYHRguJvSkWLl05BN2FnDJt5Y6hzAKcp\/3TxUC93oK6xMW85MEjVfxXbGPR1XjGU7Q6tMmcHPtwCgqkoq7NdaYPA5kXZV5gUl5EGWaeb5fswF8DG9jdsdSM6hR7Ix90S4Ve7Bu061+cd5GeV+N9PDAnye6q\/PWUwORxaSc5xTeX7tVQ6DjBNQRBt+axea5RxhfbA\/y+XYKkJueOQRWQoE1o0MPGYLh6tgUA4chT0gm8f+Om5+9JZ4mxwc12AiATL7iGdYuKFU1TMZ5MSXFQhLRnQm++c0IryKCuQDZQkrqWhov5Yi\/7\/S0jQ4mVvl73auj7\/ksmUTbUwIMgRfB8o6QHorE19L5BLztE6DN0RTonhOOPX9yVzJQW4sXgVHPPmOMlpCroZuya7v3SHJIMzUpTYj8+GTNSp31b3TbRm12q+O6r7BbWKDEaRNrPRbMADQk\/fAnnJh9WNlNaZ0mF03RRJJTyNK9+888C38UYOpNQtA13E7Y6KRqgDzeo+5nq\/17cUBKdFZeYOzSWfmOpqhRgE5KGOa9yX9NEV0YbrCeaqLX+mXQdlnL71pVbqiEORDBt6KVxpDJ\/tEm78JNFtkDIZXSv9\/jvSC+SO9wU4SgQd6C3PbPyBPgiUSlOYOyzONwLegc5TVSoJWJdDdUPI2BLaHYjDJFGKJbz+l8P7Xt06SLk2iiHwY0nNXokl9p2aDgfGzQnt6Z8nOntPUNRMsOgVS4k4BoH9mpFADuUywSisbWtUW6LHWR3u+9g50rjOXmRAvDaD\/xLK\/ovXUuEekdsSXBa0wxfBOcJlTUTPu5LGd6QPL4j3C3usx+21gHM4+Yo2hVizOBtF\/ORXlc4B0nDuTI4LDORQmIU2HpWrCoHYptWUNb2PoHEwjXdEoKMy1PCDhmc36Y4EfxmL7mBIocXhqJwIugqIU+Mmmf5gBi7dUxTacsJxSTQr6gVItBV0XLqqCeMsraZ0Im+5rRWcqOLqa06L5Vi3Iutbe6U8jJtQ\/JQcRzyYxMlXAsPbEPKOIfashowGITC\/qmFx4P4D2ltSafIGlIfpuidJwRYo\/C809fk317cQYWr+HacIGJsEF7kh2IcNH2OTBuH\/AAZcduqnxQ2k2uTTTqNd23gORC4R0ilPjc44rgK2fj...
+
+info Network 2026-08-02 20:18:58.080642 
+Response https://www.cdnhjk.net/daily?user_id=6073657 200
+headers:
+{date: Sun, 02 Aug 2026 12:18:58 GMT, content-type: application/json; charset=utf-8;, cf-ray: a24d07391c9c2d8e-AMS, server: cloudflare, expires: Thu, 19 Nov 1981 08:52:00 GMT, cache-control: no-store, no-cache, must-revalidate, pragma: no-cache, access-control-allow-origin: https://localhost, access-control-allow-credentials: true, access-control-allow-methods: GET, POST, OPTIONS, access-control-allow-headers: Content-Type, Authorization, Tokenparam, Token, set-cookie: [ipcountry=CN; path=/, ipm5=86ec30fe3aa2eaf2fe674b2f4f36c710; path=/], last-modified: Sun, 02 Aug 2026 12:18:58 GMT, vary: Accept-Encoding, alt-svc: h3=":443"; ma=86400, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=jm5qOPYMkDs1i5KMiHflkszL2Oa8qCjsxqSjloh1phF4tW0zXzMp0oCU5GaGdihYsrmduCDHpJwe1KYXwy91Ws0QhcOYVZJv5kyJ2s%2B6rIkJFbV%2BjXbpSeKgeXz%2BVUoFlQpF8riLgE5Prj3JeA%3D%3D"}]}, cf-cache-status: DYNAMIC}
+{"code":200,"data":"iQZ0bah4Gsdm7H+W2Fq7pYYwM5eb8xKiibksUfX+ov\/Ga+eSNmL3pNEqiGR2BxpyY5QPEqqlFocDKPsqMNwYZuyqnh38Mw5EoFwFkq0CljLjic9s7d0KthOwRjAyYBW5LZbVCUy7wAfuH7f8tBidc1DIAc7rfsguWflmAqDjDPB+k9C+i2\/1SHJK+Yh+iJmrGWQG5+l4rr9uTEqisbrDmPKNlMiHvey7xKBoOelPlLxX4vgZcdRmXHg5AloWTWuxBxNkkVsibsfYv6UAi1e0wfKNlMiHvey7xKBoOelPlLxB55SnjRTlBEz+X3hxAOS+Rt+9dktMSnKBOGkHoIdgcfoSy8nwuygpZKGBNlGM0EMdopfc4tvWhlAj5vHG3bmqfL5kLQHzgUDzGjmI0+hSfXRJJU\/NAAs\/ZCFiqAREx3u9GlhnJ8sW9bRA+54XlbjSW05T7FJ7UuMC0tU\/4uJvDsMiVoAqTwA33jPIvpedIennBBR+jEoJ8VXRC+hwmeG75EQifxTRVV7ELRpyth8\/vC+QayEtLOMP18ys4NGrmqmxc\/ZkMugpc5dUT7gNlPc1QAh4u6w6SpGeBD4KNkKZyCf+2zBd3hyUiGwRAY5DzkscO8udx2Zf6WeZhMnBlSju5mTCQ6c\/n6JS1ThrVeTXbVdoVV8CgecMhhT4VvwGLePXEW1VLBSUA06EvlW+SMnkpQa9olyg4ky7awcVqeOOKJOxHD+kfsc3K3wytfy045Blz3tnH9a8d8HAz+ErPr+YxxiRMOc4e9QwWYi9gJkba6h+lTcEZFwv2iCiP4C+V6zRG0C6\/qxlMD77TRXQ4yDpqH2FLJ8f8jcflySGzSpBPnRJJU\/NAAs\/ZCFiqAREx3t4EZ21ZoyDrhCQ1xgpqTeVo6dZ2EX0oFE2HbwBM7EV0Uo381okhg7n6+rezoPjsLgP2HcY0oLBRDkDffzTzCDQ5EQifxTRVV7ELRpyth8\/vG9wTx58d5ZA1ywd9xHjkcOxc\/ZkMugpc5dUT7gNlPc1QAh4u6w6SpGeBD4KNkKZyFGOTKZPVY3RIKxUTQLMf\/gcO8udx2Zf6WeZhMnBlSjueKs\/A0p2jteM515kk9+bPldoVV8CgecMhhT4VvwGLePkUOpvw\/n14DTCYk+ZCmOIAUUmeO9aRdEvQ+WygpFgwrFz9mQy6Clzl1RPuA2U9zWwWoskxvNS\/JqpfT++uemH3n4EHjL03DbzyEpcG0NYKsuCLIk6TfUWzLsF1SzZwJ46AReGthaqIBRjzUtTpUI813KUhvDK2KK\/s2BqdrYIQ5oe3AC0sNTgUY2C4zsy0HnNETa1J9mbFbEj7cwuHriqo6dZ2EX0oFE2HbwBM7EV0Uo381okhg7n6+rezoPjsLhqqE2Sfvlg1aLw2BK5fYJvPtA\/MvHfibkONq4lCJdyEsFxkW5rcVI1hU17PmYqJGm3q\/ELwu0fW+fgvJZ7j2RUOTukQ09JCMxl+BIbd0eieC70AMYhzJ4LRfaZ5EETPG1MkeLCSiEqlWBO5PlPjNZOOVr7F0zuSjh1fUTy4z3ZcDroCIPzQ7k3SwhemaPSXiAn3X1KcDIKihA0m02j6U5uO7P7m6J7ShBjUEqAfHvHfZOxHD+kfsc3K3wytfy045D0eqgNYn2SU\/jnDp96HvsXPGOgbv9ltg4CLkHOQoAFGUGJwt1Rg2X4MkQ3xWwmF48NjeyRbmoUsWd\/zhCMQ\/zFndM0eAanBABGhPTmCbKPJGjfhO45enQTdppyjyVnfZdzomhVPkQq5wLLD2XLvZzhSBepOvooXHOdbvK+mVjQb6ELW5h84BkZllg7gZyWbVI66AiD80O5N0sIXpmj0l4gmANJjEHkV4bNWG9o0KzxUmY...
+
+info Network 2026-08-02 20:18:58.088293 
+POST https://www.cdnhjk.net/daily_chk
+headers:
+{Accept: */*, Accept-Encoding: gzip, deflate, br, zstd, Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7, Connection: keep-alive, Origin: https://localhost, Referer: https://localhost/, Sec-Fetch-Dest: empty, Sec-Fetch-Mode: cors, Sec-Fetch-Site: cross-site, X-Requested-With: com.example.app, Authorization: Bearer, Sec-Fetch-Storage-Access: active, token: 4c46320ded9a7416e5609bfca23d0fc4, tokenparam: 1785673138,2.0.16, User-Agent: Mozilla/5.0 (Linux; Android 10; K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/130.0.0.0 Mobile Safari/537.36, Content-Type: application/x-www-form-urlencoded, cookie: theme=light; AVS=q7tpmo919v3f1ibu300dlpnklq; __cflb=02DiuE2Zf1N6nw9KjUSdgCHu1ENVDihv1s97ee1m8xAfW; ipcountry=CN; ipm5=86ec30fe3aa2eaf2fe674b2f4f36c710}
+data:
+user_id=6073657&daily_id=71
+
+info Network 2026-08-02 20:18:58.943736 
+Response https://www.cdnhjk.net/daily_chk 200
+headers:
+{date: Sun, 02 Aug 2026 12:18:59 GMT, content-type: application/json; charset=utf-8;, cf-ray: a24d07409cf3dc4d-AMS, server: cloudflare, expires: Thu, 19 Nov 1981 08:52:00 GMT, cache-control: no-store, no-cache, must-revalidate, pragma: no-cache, access-control-allow-origin: https://localhost, access-control-allow-credentials: true, access-control-allow-methods: GET, POST, OPTIONS, access-control-allow-headers: Content-Type, Authorization, Tokenparam, Token, set-cookie: [ipcountry=CN; path=/, ipm5=06e702cdf421b6dc6e37412317a919ad; path=/], last-modified: Sun, 02 Aug 2026 12:18:59 GMT, vary: Accept-Encoding, alt-svc: h3=":443"; ma=86400, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=EZiU%2BeK1bOPwgkfnLo3FjD5FLt03u5YrexgjiOOEAePKy9GmMpbEU3zvyKgenVg8PDUJ4KTi5051zemG%2BfbTWPbdP7KzxDyyWIPDMvIpoWlmcht1VhKgsMPerF3JJzYdICTzg%2FZV1XMyrrKEJw%3D%3D"}]}, cf-cache-status: DYNAMIC}
+{"code":200,"data":null}
+
+info Network 2026-08-02 20:19:03.323653 
+Response https://api.copy-manga.com/api/v3/system/network2?platform=3 200
+headers:
+{content-type: application/json, vary: Accept, Accept-Language, Accept-Encoding, Origin, allow: OPTIONS, GET, x-frame-options: ALLOWALL, cross-origin-opener-policy: same-origin, content-language: zh-hant, x-content-type-options: nosniff, referrer-policy: same-origin}
+{"code":200,"message":"请求成功","results":{"static":"s3.mangafunb.fun","image":"","share":["www.copymanga.fun"],"api":[["api.copy202601.com"],["api.copy202601.com"]],"ads":[["marketing.aiacgn.com"],["marketing.aiacgn.com"]],"host_comic":"comic.zaimanhua.com","host_cartoon":"cartoon.zaimanhua.com","host_novel":"novel.zaimanhua.com","day_downloads_total":5,"ads_reward_downloads":5,"ads_reward_day_show":3,"ads_screen_show":0,"ads_read_express_show":0,"ads_home_seconds":0,"ads_restart_seconds":0,"ads_comic_show":0,"ads_cartoon_show":0,"day_downloads":5,"vip_downloads":100,"reward_downloads":0,"ads_vip_end":null,"ads_stat_switch":false,"ads_stat_switch2":true,"ads_reward_seconds":1200,"in_mainland":true}}
+
+info Network 2026-08-02 20:30:15.162265 
+GET https://cdn.jsdelivr.net/gh/venera-app/venera-configs@main/index.json
+headers:
+{}
+data:
+null
+
+info Network 2026-08-02 20:30:16.820235 
+Response https://cdn.jsdelivr.net/gh/venera-app/venera-configs@main/index.json 200
+headers:
+{date: Sun, 02 Aug 2026 12:30:17 GMT, content-type: application/json; charset=utf-8, server: cloudflare, access-control-allow-origin: *, access-control-expose-headers: *, timing-allow-origin: *, cache-control: public, max-age=604800, s-maxage=43200, cross-origin-resource-policy: cross-origin, x-content-type-options: nosniff, strict-transport-security: max-age=31536000; includeSubDomains; preload, x-jsd-version: main, x-jsd-version-type: branch, etag: W/"1274-kP4ax+45x37jaDGo6HeMv/4hC+A", cf-ray: a24d17cd5c234adb-LAX, accept-ranges: bytes, x-served-by: cache-fra-etou8220196-FRA, cache-den-kden1300089-DEN, x-cache: HIT, MISS, vary: Accept-Encoding, alt-svc: h3=":443"; ma=86400, nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}, age: 1505, cf-cache-status: HIT, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=iKR1Dt3DzwFVTpGVZ1s%2B5hnHTJhFrzZuPQHWZG7hcReTQl%2FLIyFUVMYFRFGMfEl2FaW%2BgOMdp15giCCrQ1R3XSyaaHFM5u4FGNhqXmkJtAkj97Aane8GKpfEkQt8qTMX9Ro%3D"}]}}
+[
+    {
+        "name": "拷贝漫画",
+        "fileName": "copy_manga.js",
+        "key": "copy_manga",
+        "version": "1.4.1"
+    },
+    {
+        "name": "拷贝漫画(多账号)",
+        "fileName": "copy_manga_multi_accounts.js",
+        "key": "copy_manga",
+        "version": "1.4.1"
+    },
+    {
+        "name": "Komiic",
+        "fileName": "komiic.js",
+        "key": "Komiic",
+        "version": "1.0.3"
+    },
+    {
+        "name": "包子漫画",
+        "fileName": "baozi.js",
+        "key": "baozi",
+        "version": "1.1.6"
+    },
+    {
+        "name": "Picacg",
+        "fileName": "picacg.js",
+        "key": "picacg",
+        "version": "1.0.6"
+    },
+    {
+        "name": "nhentai",
+        "fileName": "nhentai.js",
+        "key": "nhentai",
+        "version": "1.1.0"
+    },
+    {
+        "name": "紳士漫畫",
+        "fileName": "wnacg.js",
+        "key": "wnacg",
+        "version": "1.0.5",
+        "description": "紳士漫畫漫畫源, 不能使用時請嘗試更換URL"
+    },
+    {
+        "name": "ehentai",
+        "fileName": "ehentai.js",
+        "key": "ehentai",
+        "version": "1.1.8"
+    },
+    {
+        "name": "禁漫天堂",
+        "fileName": "jm.js",
+        "key": "jm",
+        "version": "1.4.0",
+        "description": "禁漫天堂漫畫源, 不能使用時請嘗試切換分流"
+    },
+    {
+        "name": "MangaDex",
+        "fileName": "manga_dex.js",
+        "key": "manga_dex",
+        "version": "1.1.0",
+        "description": "Account feature is not supported yet."
+    },
+    {
+        "name": "爱看漫",
+        "fileName": "ikmmh.js",
+        "key": "ikmmh",
+        "version": "1.0.5"
+    },
+    {
+        "name": "少年ジャンプ＋",
+        "fileName": "shonen_jump_plus.js",
+        "key": "shonen_jump_plus",
+        "version": "1.1.1"
+    },
+    {
+        "name": "hitomi.la",
+        "fileName": "hitomi.js",
+        "key": "hitomi",
+        "version": "1.1.2"
+    },
+    {
+        "name": "comick",
+        "fil...
+
+info Network 2026-08-02 20:34:07.975125 
+GET https://raw.githubusercontent.com/EricDasha/venera-configs/refs/heads/main/manwaba.js
+headers:
+{}
+data:
+null
+
+error Network 2026-08-02 20:34:22.982923 
+GET https://raw.githubusercontent.com/EricDasha/venera-configs/refs/heads/main/manwaba.js
+DioException [unknown]: null
+Error: [RhttpTimeoutException] Request timed out. URL: https://raw.githubusercontent.com/EricDasha/venera-configs/refs/heads/main/manwaba.js
+null
+
+error Add comic source 2026-08-02 20:34:22.984612 
+DioException [unknown]: null
+Error: [RhttpTimeoutException] Request timed out. URL: https://raw.githubusercontent.com/EricDasha/venera-configs/refs/heads/main/manwaba.js
+#0      DioMixin.fetch (package:dio/src/dio_mixin.dart:523)
+<asynchronous suspension>
+#1      AppDio.request (package:venera_next/network/app_dio.dart:212)
+<asynchronous suspension>
+#2      _BodyState.handleAddSource (package:venera_next/features/comic_source/comic_source_page.dart:323)
+<asynchronous suspension>
+
+
+info Network 2026-08-02 20:34:44.759871 
+GET https://raw.githubusercontent.com/EricDasha/venera-configs/refs/heads/main/manwaba.js
+headers:
+{}
+data:
+null
+
+info Network 2026-08-02 20:34:45.271919 
+Response https://raw.githubusercontent.com/EricDasha/venera-configs/refs/heads/main/manwaba.js 200
+headers:
+{cache-control: max-age=300, content-security-policy: default-src 'none'; style-src 'unsafe-inline'; sandbox, content-type: text/plain; charset=utf-8, etag: W/"31740bc0c3a9013428119cfb8edc9fb9d94113af2554d2beed213ca83a58a421", strict-transport-security: max-age=31536000, x-content-type-options: nosniff, x-frame-options: deny, x-xss-protection: 1; mode=block, x-github-request-id: 4114:A5C85:34C7B7:743800:6A6F3860, x-github-edge-region: southeastasia, source-age: 261, accept-ranges: bytes, date: Sun, 02 Aug 2026 12:34:45 GMT, via: 1.1 varnish, x-served-by: cache-sin-wsat1880050-SIN, x-cache: HIT, x-cache-hits: 0, x-timer: S1785674086.759306,VS0,VE2, vary: Authorization,Accept-Encoding, access-control-allow-origin: *, cross-origin-resource-policy: cross-origin, x-fastly-request-id: 52d733ab0054642ab94687b93b2514adbb94d6cc, expires: Sun, 02 Aug 2026 12:39:45 GMT}
+/** @type {import('./_venera_.js')} */
+class ManWaBa extends ComicSource {
+  name = "漫蛙漫画";
+  key = "manwaba";
+  version = "2.0.0";
+  minAppVersion = "1.4.0";
+  url = "https://cdn.jsdelivr.net/gh/venera-app/venera-configs@main/manwaba.js";
+
+  settings = {
+    domain: {
+      title: "主域名",
+      type: "input",
+      default: "manwame.com",
+    },
+  };
+
+  get baseUrl() {
+    let domain = this.loadSetting("domain") || "manwame.com";
+    return `https://${domain}`;
+  }
+
+  /// AES-128-CBC 解密密钥 (hex)
+  aesKeyHex = "355626526f52254a6640704a50796446";
+
+  /// hex 字符串转 ArrayBuffer
+  hexToBytes(hex) {
+    let buf = new ArrayBuffer(hex.length / 2);
+    let view = new Uint8Array(buf);
+    for (let i = 0; i < hex.length; i += 2) {
+      view[i / 2] = parseInt(hex.substring(i, i + 2), 16);
+    }
+    return buf;
+  }
+
+  /// 解密章节图片参数
+  async decryptParams(params) {
+    let key = this.hexToBytes(this.aesKeyHex);
+    let encrypted = await Convert.decodeBase64(params);
+    let view = new Uint8Array(encrypted);
+    let iv = view.slice(0, 16).buffer;
+    let ciphertext = view.slice(16).buffer;
+    let decrypted = await Convert.decryptAesCbc(ciphertext, key, iv);
+    let json = await Convert.decodeUtf8(decrypted);
+    return JSON.parse(json);
+  }
+
+  /// 解析漫画卡片
+  parseCard(e) {
+    let coverLink = e.querySelector("a.manga-cover");
+    let href = coverLink.attributes["href"];
+    let id = href.split("/").pop();
+    let img = coverLink.querySelector("img");
+    let title = img.attributes["alt"];
+    let cover = img.attributes["src"];
+    let subTitle = e.querySelector("div.manga-meta > p")?.text?.trim() || "";
+    return new Comic({
+      id: id,
+      title: title,
+      cover: cover,
+      subTitle: subTitle,
+    });
+  }
+
+  /// 从分页元素中提取最大页码
+  parseMaxPage(document) {
+    let maxPage = 1;
+    let links = document.querySelectorAll(".pagination a");
+    for (let a of links) {
+      let href = a.attributes["href"] || "";
+      let match = href.match(/(?:page[=/])(\d+)/);
+      if (match) {
+        maxPage = Math.m...
+
+error Add comic source 2026-08-02 20:34:45.287686 
+key(manwaba) already exists
+#0      ComicSourceParser.parse (package:venera_next/features/comic_source/parser.dart:146)
+#1      ComicSourceParser.createAndParse (package:venera_next/features/comic_source/parser.dart:99)
+<asynchronous suspension>
+#2      _BodyState.addSource (package:venera_next/features/comic_source/comic_source_page.dart:341)
+<asynchronous suspension>
+#3      _BodyState.handleAddSource (package:venera_next/features/comic_source/comic_source_page.dart:332)
+<asynchronous suspension>
+
+
+info Network 2026-08-02 20:34:51.845114 
+GET https://raw.githubusercontent.com/EricDasha/venera-configs/refs/heads/main/manwaba.js
+headers:
+{}
+data:
+null
+
+info Network 2026-08-02 20:34:52.599045 
+Response https://raw.githubusercontent.com/EricDasha/venera-configs/refs/heads/main/manwaba.js 200
+headers:
+{cache-control: max-age=300, content-security-policy: default-src 'none'; style-src 'unsafe-inline'; sandbox, content-type: text/plain; charset=utf-8, etag: W/"31740bc0c3a9013428119cfb8edc9fb9d94113af2554d2beed213ca83a58a421", strict-transport-security: max-age=31536000, x-content-type-options: nosniff, x-frame-options: deny, x-xss-protection: 1; mode=block, x-github-request-id: 4114:A5C85:34C7B7:743800:6A6F3860, x-github-edge-region: southeastasia, source-age: 268, accept-ranges: bytes, date: Sun, 02 Aug 2026 12:34:53 GMT, via: 1.1 varnish, x-served-by: cache-sin-wsat1880054-SIN, x-cache: HIT, x-cache-hits: 1, x-timer: S1785674093.090887,VS0,VE1, vary: Authorization,Accept-Encoding, access-control-allow-origin: *, cross-origin-resource-policy: cross-origin, x-fastly-request-id: 765551ef8793491bed2fd7eabcd2abb634148922, expires: Sun, 02 Aug 2026 12:39:53 GMT}
+/** @type {import('./_venera_.js')} */
+class ManWaBa extends ComicSource {
+  name = "漫蛙漫画";
+  key = "manwaba";
+  version = "2.0.0";
+  minAppVersion = "1.4.0";
+  url = "https://cdn.jsdelivr.net/gh/venera-app/venera-configs@main/manwaba.js";
+
+  settings = {
+    domain: {
+      title: "主域名",
+      type: "input",
+      default: "manwame.com",
+    },
+  };
+
+  get baseUrl() {
+    let domain = this.loadSetting("domain") || "manwame.com";
+    return `https://${domain}`;
+  }
+
+  /// AES-128-CBC 解密密钥 (hex)
+  aesKeyHex = "355626526f52254a6640704a50796446";
+
+  /// hex 字符串转 ArrayBuffer
+  hexToBytes(hex) {
+    let buf = new ArrayBuffer(hex.length / 2);
+    let view = new Uint8Array(buf);
+    for (let i = 0; i < hex.length; i += 2) {
+      view[i / 2] = parseInt(hex.substring(i, i + 2), 16);
+    }
+    return buf;
+  }
+
+  /// 解密章节图片参数
+  async decryptParams(params) {
+    let key = this.hexToBytes(this.aesKeyHex);
+    let encrypted = await Convert.decodeBase64(params);
+    let view = new Uint8Array(encrypted);
+    let iv = view.slice(0, 16).buffer;
+    let ciphertext = view.slice(16).buffer;
+    let decrypted = await Convert.decryptAesCbc(ciphertext, key, iv);
+    let json = await Convert.decodeUtf8(decrypted);
+    return JSON.parse(json);
+  }
+
+  /// 解析漫画卡片
+  parseCard(e) {
+    let coverLink = e.querySelector("a.manga-cover");
+    let href = coverLink.attributes["href"];
+    let id = href.split("/").pop();
+    let img = coverLink.querySelector("img");
+    let title = img.attributes["alt"];
+    let cover = img.attributes["src"];
+    let subTitle = e.querySelector("div.manga-meta > p")?.text?.trim() || "";
+    return new Comic({
+      id: id,
+      title: title,
+      cover: cover,
+      subTitle: subTitle,
+    });
+  }
+
+  /// 从分页元素中提取最大页码
+  parseMaxPage(document) {
+    let maxPage = 1;
+    let links = document.querySelectorAll(".pagination a");
+    for (let a of links) {
+      let href = a.attributes["href"] || "";
+      let match = href.match(/(?:page[=/])(\d+)/);
+      if (match) {
+        maxPage = Math.m...
+
+info Network 2026-08-02 20:35:02.576749 
+GET https://api.copy2000.online/api/v3/h5/homeIndex
+headers:
+{User-Agent: COPY/3.0.6, source: copyApp, deviceinfo: 6018119V-1974, dt: 2026.08.02, platform: 3, referer: com.copymanga.app-3.0.6, version: 3.0.6, device: YD1J.727137.055, pseudoid: XtVSgjOWbBQyx8hm, Accept: application/json, region: 0, authorization: Token c340eadac771b3e830dcc1e08355c24e33655091, umstring: b4c89ca4104ea9a97750314d791520ac, x-auth-timestamp: 1785674102, x-auth-signature: 06cf6c043d282f01d1e053ced967da10087d680daaa4d1d46c86c9783c4619a0, cookie: csrftoken=nPbHLslkCQFCmtZlMfM0H9aBStrFsXqx; sessionid=7fbmhejj7p8g45ddpw7hg0fhp4h2s6j1}
+data:
+null
+
+info Network 2026-08-02 20:35:03.450170 
+Response https://api.copy2000.online/api/v3/h5/homeIndex 200
+headers:
+{content-type: application/json, vary: Accept, Accept-Language, Accept-Encoding, Origin, allow: GET, OPTIONS, expires: Sun, 02 Aug 2026 12:39:36 GMT, cache-control: max-age=300, x-frame-options: ALLOWALL, cross-origin-opener-policy: same-origin, content-language: zh-hant, x-content-type-options: nosniff, referrer-policy: same-origin}
+{"code":200,"message":"请求成功","results":{"topics":{"list":[{"title":"夏番漫畫2026 必看熱門漫畫推薦第41期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/remenmanhua202606/17840192714271.jpg.200x80.jpg","period":"第41期","type":1,"brief":"","path_word":"remenmanhua202606","datetime_created":"2026-07-03"},{"title":"春番漫畫2026 必看熱門漫畫推薦第40期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/remenmanhua202604/17840191948760.jpg.200x80.jpg","period":"第40期","type":1,"brief":"","path_word":"remenmanhua202604","datetime_created":"2026-07-03"},{"title":"這本漫畫真厲害2026獲獎作品 必看熱門漫畫推薦第39期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/zhebenmanhuazhenlihai2026/17746252607598.jpg.200x80.jpg","period":"第39期","type":1,"brief":"","path_word":"zhebenmanhuazhenlihai2026","datetime_created":"2026-03-27"},{"title":"最期待2026動畫化的漫畫 必看熱門漫畫推薦第38期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/remenmanhua202509/17746250508583.jpg.200x80.jpg","period":"第38期","type":1,"brief":"","path_word":"remenmanhua202509","datetime_created":"2026-03-27"}],"total":41,"limit":4,"offset":0},"topicsList":{"list":[{"title":"夏番漫畫2026 必看熱門漫畫推薦第41期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/remenmanhua202606/17840192714271.jpg.200x80.jpg","period":"第41期","type":1,"brief":"","path_word":"remenmanhua202606","datetime_created":"2026-07-03"},{"title":"春番漫畫2026 必看熱門漫畫推薦第40期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/remenmanhua202604/17840191948760.jpg.200x80.jpg","period":"第40期","type":1,"brief":"","path_word":"remenmanhua202604","datetime_created":"2026-07-03"},{"title":"這本漫畫真厲害2026獲獎作品 必看熱門漫畫推薦第39期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/zhebenmanhuazhenlihai2026/17746252607598.jpg.200x80.jpg","period":"第39期","type":1,"brief":"","path_word":"zhebenmanhuazhenlihai2026","datetime_created":"2026-03-27"},{"title":"最期待2026動畫化的漫畫 必看熱門漫畫推薦第38期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/remenmanhua202509/17746250508583.jpg.200x80.jpg","period":"第38期","type":1,"brief":"","path_word":"remenmanhua202509","datetime_created":"2026-03-27"}],"total":65,"limit":4,"offset":0},"recComics":{"list":[{"type":1,"comic":{"name":"某天變成了幼龍","females":[],"males":[],"theme":[],"path_word":"mtbclyl","author":[{"name":"판테라","path_word":"pantera"},{"name":"리피아","path_word":"ripia"},{"name":"햄스끼","path_word":"haemseukki"}],"cover":"https://sm.mangafunb.fun/m/mtbclyl/cover/1780421175.jpg.328x422....
+
+info Network 2026-08-02 20:35:04.154558 
+GET https://api.copy2000.online/api/v3/h5/homeIndex
+headers:
+{User-Agent: COPY/3.0.6, source: copyApp, deviceinfo: 6018119V-1974, dt: 2026.08.02, platform: 3, referer: com.copymanga.app-3.0.6, version: 3.0.6, device: YD1J.727137.055, pseudoid: XtVSgjOWbBQyx8hm, Accept: application/json, region: 0, authorization: Token c340eadac771b3e830dcc1e08355c24e33655091, umstring: b4c89ca4104ea9a97750314d791520ac, x-auth-timestamp: 1785674104, x-auth-signature: c64c0055ee5815ddcb4f21b4c9efd79530a89d94a83fa0157158f012ad43332b, cookie: csrftoken=nPbHLslkCQFCmtZlMfM0H9aBStrFsXqx; sessionid=7fbmhejj7p8g45ddpw7hg0fhp4h2s6j1}
+data:
+null
+
+info Network 2026-08-02 20:35:05.228495 
+GET https://manwame.com
+headers:
+{User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:05.417113 
+Response https://api.copy2000.online/api/v3/h5/homeIndex 200
+headers:
+{content-type: application/json, vary: Accept, Accept-Language, Accept-Encoding, Origin, allow: GET, OPTIONS, expires: Sun, 02 Aug 2026 12:39:36 GMT, cache-control: max-age=300, x-frame-options: ALLOWALL, cross-origin-opener-policy: same-origin, content-language: zh-hant, x-content-type-options: nosniff, referrer-policy: same-origin}
+{"code":200,"message":"请求成功","results":{"topics":{"list":[{"title":"夏番漫畫2026 必看熱門漫畫推薦第41期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/remenmanhua202606/17840192714271.jpg.200x80.jpg","period":"第41期","type":1,"brief":"","path_word":"remenmanhua202606","datetime_created":"2026-07-03"},{"title":"春番漫畫2026 必看熱門漫畫推薦第40期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/remenmanhua202604/17840191948760.jpg.200x80.jpg","period":"第40期","type":1,"brief":"","path_word":"remenmanhua202604","datetime_created":"2026-07-03"},{"title":"這本漫畫真厲害2026獲獎作品 必看熱門漫畫推薦第39期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/zhebenmanhuazhenlihai2026/17746252607598.jpg.200x80.jpg","period":"第39期","type":1,"brief":"","path_word":"zhebenmanhuazhenlihai2026","datetime_created":"2026-03-27"},{"title":"最期待2026動畫化的漫畫 必看熱門漫畫推薦第38期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/remenmanhua202509/17746250508583.jpg.200x80.jpg","period":"第38期","type":1,"brief":"","path_word":"remenmanhua202509","datetime_created":"2026-03-27"}],"total":41,"limit":4,"offset":0},"topicsList":{"list":[{"title":"夏番漫畫2026 必看熱門漫畫推薦第41期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/remenmanhua202606/17840192714271.jpg.200x80.jpg","period":"第41期","type":1,"brief":"","path_word":"remenmanhua202606","datetime_created":"2026-07-03"},{"title":"春番漫畫2026 必看熱門漫畫推薦第40期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/remenmanhua202604/17840191948760.jpg.200x80.jpg","period":"第40期","type":1,"brief":"","path_word":"remenmanhua202604","datetime_created":"2026-07-03"},{"title":"這本漫畫真厲害2026獲獎作品 必看熱門漫畫推薦第39期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/zhebenmanhuazhenlihai2026/17746252607598.jpg.200x80.jpg","period":"第39期","type":1,"brief":"","path_word":"zhebenmanhuazhenlihai2026","datetime_created":"2026-03-27"},{"title":"最期待2026動畫化的漫畫 必看熱門漫畫推薦第38期","series":null,"journal":"2026","cover":"https://s3.mangafunb.fun/topic/cover/remenmanhua202509/17746250508583.jpg.200x80.jpg","period":"第38期","type":1,"brief":"","path_word":"remenmanhua202509","datetime_created":"2026-03-27"}],"total":65,"limit":4,"offset":0},"recComics":{"list":[{"type":1,"comic":{"name":"某天變成了幼龍","females":[],"males":[],"theme":[],"path_word":"mtbclyl","author":[{"name":"판테라","path_word":"pantera"},{"name":"리피아","path_word":"ripia"},{"name":"햄스끼","path_word":"haemseukki"}],"cover":"https://sm.mangafunb.fun/m/mtbclyl/cover/1780421175.jpg.328x422....
+
+info Network 2026-08-02 20:35:05.471365 
+GET https://sm.mangafunb.fun/m/mtbclyl/cover/1780421175.jpg.328x422.jpg
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:05.471426 
+GET https://sm.mangafunb.fun/m/mofashaonvyutangguozhanzheng/cover/1765425681.jpg.328x422.jpg
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:05.471449 
+GET https://sl.mangafunb.fun/l/lameiyulameidebaihe/cover/1749829652.jpg.328x422.jpg
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:05.471476 
+GET https://ss.mangafunb.fun/s/shidaorujingcaishuoxihuanxiaobuchulai/cover/1774719955.jpg.328x422.jpg
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:05.471498 
+GET https://su.mangafunb.fun/u/unmetmounaowaikeyideriji/cover/1784220062.jpg.328x422.jpg
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:05.471521 
+GET https://sb.mangafunb.fun/b/bbzdwnwzxyymsl/cover/1785620132.png.328x422.jpg
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:05.471543 
+GET https://sh.mangafunb.fun/h/hywsgwrdzdsnr/cover/1780897316.webp.328x422.jpg
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:05.471565 
+GET https://sb.mangafunb.fun/b/bzfdzszqsyyxzskws/cover/1664888025.jpg.328x422.jpg
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:05.471586 
+GET https://sb.mangafunb.fun/b/baoshimonv/cover/1783926258.jpg.328x422.jpg
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:06.298164 
+Response https://sb.mangafunb.fun/b/bbzdwnwzxyymsl/cover/1785620132.png.328x422.jpg 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:06 GMT, content-type: binary/octet-stream, content-length: 85193, last-modified: Sat, 01 Aug 2026 21:35:35 GMT, x-rgw-object-type: Normal, etag: "7486a02a0ddb4fcbb832e1b8fe227e38", x-amz-request-id: tx000007c556b7326aef1aa-006a6e6c63-13e71567-nyc, x-77-nzt: lPZoTDkPcm+1EAac6h5C1HAFKHamrK3IogXs5BvhrmEwf7824HK8D4sm8t4lRFTdCFHd74xj8cKU, x-77-nzt-ray: 4b38e216dc999e55136d6e6a62a69c26, age: 1535, x-77-cache: HIT, x-77-age: 108, server: cloudflare, x-77-pop: hongkongHK, accept-ranges: bytes, cache-control: max-age=14400, cf-cache-status: HIT, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=mu6A9kqGU8mxxKDmad5N%2FdQTYqrOtpNiCPjPyKXAIvKC1BLlUCIvxtsfJeMt0gHZOVyYNtzVa5TPp1yHn8f3SOSMFVCcLM4pkD1Sj1lf8tDLG1ZMw9mcguG%2FZQeYQQnTQJ1h"}]}, cf-ray: a24d1edf2dff4a9e-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:06.302173 
+Response https://su.mangafunb.fun/u/unmetmounaowaikeyideriji/cover/1784220062.jpg.328x422.jpg 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:06 GMT, content-type: binary/octet-stream, content-length: 52130, last-modified: Thu, 16 Jul 2026 16:41:05 GMT, x-rgw-object-type: Normal, etag: "975f35c871c561a4cf414be7c667e973", x-amz-request-id: tx0000028aa54cdeaa29a8e-006a590a38-13ecceb2-nyc, x-77-nzt: lGetu7GVdEheuHPAmRTEJoyNiVQYpw+nnXzB/AbszJx5r7XhP04lxrAqf2cGXT5V0pwBQAhbRH2DnOxPuw, x-77-nzt-ray: 4b38e2168b9fdc8248036a6acaba2911, x-77-cache: HIT, x-77-age: 74707, server: cloudflare, x-77-pop: hongkongHK, accept-ranges: bytes, age: 4959, cache-control: max-age=14400, cf-cache-status: HIT, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=%2BLcbKbyohuY53%2Bt10a713ThJG7wXG4gUWdHUUX6T%2B%2Bl%2BKvrqOJWs2ai960TEgfaOKtlU9nNroH%2Bqa2yUJj1Nx3sL0JFBimbqZ71zgyGIUQuFUcyLR5ICfKYk7nTkImLBfnuz"}]}, cf-ray: a24d1edf1bb54a60-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:06.303393 
+Response https://sh.mangafunb.fun/h/hywsgwrdzdsnr/cover/1780897316.webp.328x422.jpg 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:06 GMT, content-type: binary/octet-stream, content-length: 88424, last-modified: Mon, 08 Jun 2026 05:41:59 GMT, x-rgw-object-type: Normal, etag: "c5e0ff87e45f67ea5c2b438b8871a2ae", x-amz-request-id: tx00000ac693ba2aff22282-006a265a79-13e766b5-nyc, x-77-nzt: lDUl7R9Hq4BZpu5NIXGX3+XWGAIrd+ayTWj86aFChmdYbf3BtPkkdq/b9lAg0ODSAwyqxcFlHCBgvb2QEg, x-77-nzt-ray: a24a9121d8d505d10e3a6b6a1ff49f13, x-77-cache: HIT, x-77-age: 365274, server: cloudflare, x-77-pop: hongkongHK, accept-ranges: bytes, age: 4019, cache-control: max-age=14400, cf-cache-status: HIT, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=kSyoJ3vck2FOgPfr4sE9dXfR1XILFg9502EqM3U%2BdQs0LWzsIRp2Oww0KkHgiaakQlxDbCYH2BKId%2BnTOP2gG52c%2BPqfOBHOh3C2xTbbJwYUW%2FKVTG6KkXT8bdp%2FPaL3bnSw"}]}, cf-ray: a24d1edf2faa6a93-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:06.516914 
+Response https://manwame.com 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:06 GMT, content-type: text/html; charset=utf-8, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, set-cookie: PHPSESSID=m4eshu9egcmomdbbfumc6rkuh6; path=/, expires: Thu, 19 Nov 1981 08:52:00 GMT, cache-control: no-store, no-cache, must-revalidate, pragma: no-cache, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Hh9PQfrSi%2BfzqalyLorvWDwIQDWz%2Fcpu81NCYH1YKeqb706cOl0usEw%2BLjYdjbjcvp0VqInohjWPK1FVRPqk%2BMwuCeaHEXophgTUfgtQjN4gXtK77vRgeQV86QcZFQ%3D%3D"}]}, cf-cache-status: DYNAMIC, vary: accept-encoding, alt-svc: h3=":443"; ma=86400, cf-ray: a24d1edd78cb4a63-TPE}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="renderer" content="webkit">
+<title>漫蛙漫画</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="/static/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/static/css/style.min.css?v=1.0.1">
+
+
+<script defer src="https://event.manwame.com/script.js" data-website-id="6e450c98-ce54-457b-87fb-77006b7aab23" data-domains="manwame.com"></script></head>
+<body>
+<div class="site-wrap">
+  
+<link rel="stylesheet" href="/static/libs/Swiper/11.0.5/swiper-bundle.min.css">
+<header class="site-header">
+  <div class="header-bar">
+    <a class="site-logo" href="/" title="漫蛙漫画">
+            <strong>漫蛙漫画</strong>
+    </a>
+    <!-- <a class="header-action" href="/history" aria-label="阅读记录"><i class="fa fa-history" aria-hidden="true"></i></a> -->
+  </div>
+  <form class="search-form" action="/search" method="get">
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <input type="search" name="q" value="" placeholder="搜索漫画名称">
+    <button type="submit">搜索</button>
+    <input type="hidden" name="__searchtoken__" value="817daaa7030df7c1e786f1d401c60838" />  </form>
+    <nav class="channel-nav" aria-label="站点导航">
+    <a href="/" class="active">首页</a>
+    <a href="/category">分类</a>
+    <a href="/update">更新</a>
+    <a href="/ranking">排行</a>
+  </nav>
+  </header>
+
+
+<main class="page-main">
+  <section class="home-hero swiper">
+    <div class="swiper-wrapper">
+            <div class="swiper-slide">
+        <a class="hero-panel" href="/book/98254-B7BRy">
+          <img src="https://img.manwame.com/cover/98254-B7BRy.webp" alt="进藤先生请小心轻放。" loading="lazy" decoding="async">
+          <span class="hero-copy">
+            <strong>进藤先生请小心轻放。</strong>
+            <em>更新至 第12话</em>
+          </span>
+        </a>
+      </div>
+            <div class="swiper-slide">
+        <a class="hero-panel" href="/book/milumaomidesiyangfangfa-LNv4w">
+          <img src="https://img.manwame.com/cover/milumaomidesiyangfangfa-LNv4w.webp" alt="迷路猫咪的饲养方法" loading="lazy" decoding="async">
+          <span class="hero-copy">
+            <...
+
+info Network 2026-08-02 20:35:06.567071 
+Response https://sm.mangafunb.fun/m/mofashaonvyutangguozhanzheng/cover/1765425681.jpg.328x422.jpg 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:06 GMT, content-type: binary/octet-stream, content-length: 85623, last-modified: Thu, 11 Dec 2025 04:01:25 GMT, x-rgw-object-type: Normal, etag: "31a2cfa3da2a5d4a347bb3fdb7dab32d", x-amz-request-id: tx00000732a05d1cb21e313-0069c4f0fb-1306a565-nyc, x-77-nzt: lM8rFXeAr6VolDLt7S9C9Jy6By6Pim/bdFrQ5feFMSNJbW1BJUjOK3DgZKTMGnQWcjzeSgi11Wmk, x-77-nzt-ray: 9567b4198b90d3d3e5396b6a2f6e8210, x-77-cache: HIT, x-77-age: 210695, server: cloudflare, x-77-pop: hongkongHK, accept-ranges: bytes, age: 1014, cache-control: max-age=14400, cf-cache-status: HIT, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=www%2ByyB219RjOmri3sVay5lmENZtIJaov%2B4bQAxfVdqH%2F2bnNSM1k39ifrxvA%2FkjeZK2O6vwXq8EvLdBAzZ2uQUQeVZwuYWQTR%2FsB2jBBqqgW%2BnDgCxcLYpxb8pF7n2zm9DB"}]}, cf-ray: a24d1ee00b66843f-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:06.567376 
+Response https://sl.mangafunb.fun/l/lameiyulameidebaihe/cover/1749829652.jpg.328x422.jpg 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:06 GMT, content-type: binary/octet-stream, content-length: 52569, last-modified: Fri, 13 Jun 2025 15:47:35 GMT, x-rgw-object-type: Normal, etag: "e067204743b0423636f791769122d9d1", x-amz-request-id: tx00000237421252c882b5b-0069acda00-12df879c-nyc, x-77-nzt: lM/osW851DTZCbh97cyloeXskfmwOafUOsboyaWXT+5yqbbeFEbFmKaNXg2Z9th5LmBr/2uNHoNo, x-77-nzt-ray: a24a912106dd6adfd1f2fb692d99c70b, x-77-cache: HIT, x-77-age: 726300, server: cloudflare, x-77-pop: hongkongHK, accept-ranges: bytes, age: 4631, cache-control: max-age=14400, cf-cache-status: HIT, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=dcxBvK64ApcWlyH%2Fc1jyCMTj3D9odSvg5wLiL1A2bO3I6dc4%2B1WEriUwqW0CcbFsSljnYZm4XH%2BFRmgqML8CiVT3IzsNjtfwIxMEzXf8oq0aX%2BAb2IQLKtDNvvJAXqOaAJ7h"}]}, cf-ray: a24d1ee00b21a9cb-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:06.567926 
+Response https://sb.mangafunb.fun/b/baoshimonv/cover/1783926258.jpg.328x422.jpg 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:06 GMT, content-type: binary/octet-stream, content-length: 60285, last-modified: Mon, 13 Jul 2026 07:04:20 GMT, x-rgw-object-type: Normal, etag: "c622bcd5a13f307cabcb92edfe1a246d", x-amz-request-id: tx000001e92a673619198e5-006a548f22-13e71567-nyc, x-77-nzt: lJ1IIxlXnnx1cAw8D9Mvhj/xEPQl/FDNykatwntFuTTAFTvGV24WIIOd0km2MJjkTaP2Yi80o57pHY+jvw, x-77-nzt-ray: a24a91212a143b04a2e8676a15e7a80a, x-77-cache: HIT, x-77-age: 229691, server: cloudflare, x-77-pop: hongkongHK, accept-ranges: bytes, age: 334, cache-control: max-age=14400, cf-cache-status: HIT, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=lsbFRTegIu7kZaHrzao17nK1THm5p%2BgjorZlrZ9Otc3UxbTmoafX5OSb2JTxBX5rdLh1P%2F8IKsC3dHpA%2FJiMa4RWmMuUNYei%2B1ZCd9Ljmk0kEoLfq2JicWUcf44W7kDmivYQ"}]}, cf-ray: a24d1edfecbb4a9c-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:06.568314 
+Response https://sb.mangafunb.fun/b/bzfdzszqsyyxzskws/cover/1664888025.jpg.328x422.jpg 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:06 GMT, content-type: image/jpeg, content-length: 81317, last-modified: Thu, 18 Sep 2025 16:36:39 GMT, x-rgw-object-type: Normal, etag: "c0af11d6a2a230d1ef37e1d6f1c19a02", x-amz-request-id: tx000006e402c433534cdb2-006944563c-10b13241-nyc, x-77-nzt: FAgBnJIsWAFBCAFZu6IsAUEIAVnefS4BgQgBT3/O7QAA, x-77-nzt-ray: 4b38e21603c2455b3c564469ea918f2b, x-77-cache: MISS, server: cloudflare, x-77-pop: hongkongHK, accept-ranges: bytes, age: 1869, cache-control: max-age=14400, cf-cache-status: HIT, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=GBFRo7w%2F4RlSpQ4oXv%2BQ3ZRSARSYNHoGw9oJWGNyB%2FvZBTiSQ9l2fnI%2BYdiepo4KbGvpuyadVCu3KdC68gli1eGvLplpBdW1%2BPhRm47AkoG3XN579bSnFcpk2TD43MpKrfKz"}]}, cf-ray: a24d1ee04e068416-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:06.568613 
+Response https://sm.mangafunb.fun/m/mtbclyl/cover/1780421175.jpg.328x422.jpg 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:06 GMT, content-type: binary/octet-stream, content-length: 79596, last-modified: Tue, 02 Jun 2026 17:26:19 GMT, x-rgw-object-type: Normal, etag: "0d3a38db1f4444d9df4498ffe7387e86", x-amz-request-id: tx00000796d006b60bae65e-006a1f172a-13ef7520-nyc, x-77-nzt: lDhU6lbgucj+8ubBdeKHjKtJ54L5bNM9R724EzfE3hHS6i69ygTZ5o0BnqTJVUYXefmX38+2tCsTaPNEkg, x-77-nzt-ray: 9567b419787707b7e5396b6a22208f13, x-77-cache: HIT, x-77-age: 835595, server: cloudflare, x-77-pop: hongkongHK, accept-ranges: bytes, age: 1014, cache-control: max-age=14400, cf-cache-status: HIT, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=GxX1Fi41tSLSijSKFK71fCLbRHPXbgsTfLd78IDDP%2BpeMFVczWLwhBhB80yGdl9%2FZgToORJCIbduVZc5CKsW1qfqtQscMbjuyK%2BFCcACQklOB1EHpy6vPVrN%2FaPWqmGIFyLR"}]}, cf-ray: a24d1ee02dada3a9-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:06.568887 
+GET https://img.manwame.com/cover/97495-ozxVP.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:06.568913 
+GET https://img.manwame.com/cover/quanqiuyinengkaijujuexingzixiaoshenlei-LObqE.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:06.568935 
+GET https://img.manwame.com/cover/mowangtuixiujihua-8mmnafWE1K.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:06.576844 
+Response https://ss.mangafunb.fun/s/shidaorujingcaishuoxihuanxiaobuchulai/cover/1774719955.jpg.328x422.jpg 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:06 GMT, content-type: binary/octet-stream, content-length: 75530, last-modified: Sat, 28 Mar 2026 17:45:58 GMT, x-rgw-object-type: Normal, etag: "a7ecde304be836e6d010cc91380d20cb", x-amz-request-id: tx0000097285b4fd866bbb7-0069c81650-1307761a-nyc, x-77-nzt: lPAB0zrZhqkSuCreMfd4YaErq9gRQpFLN9hxYUCYjAM/KGTokxgohWxD/aWGVIUujrG8KH+tQm73RQkGOw, x-77-nzt-ray: a24a9121c7d69c8122b56d6aea222603, x-77-cache: HIT, x-77-age: 264900, server: cloudflare, x-77-pop: hongkongHK, accept-ranges: bytes, age: 3905, cache-control: max-age=14400, cf-cache-status: HIT, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=LGNrHInIfowO%2B2F7um6lngy7fcSuSZscsbtTaZ4GtEkj3AeEQSFjx0xBDruQo%2FGQFh8BEfH43nrOSL3PmgxeYiUMfSBF3kubj4lCe%2FS05d7e8FE28F75V4WISldvv9sSCMFd"}]}, cf-ray: a24d1ee04f71a339-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:06.642943 
+GET https://img.manwame.com/cover/chongshengzhe-3eexOUd6P4.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:06.653787 
+GET https://img.manwame.com/cover/sanliufanpaidexueyuanshengcunji-W6Rf9n9R.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:06.723653 
+GET https://img.manwame.com/cover/anshenbang-Gp7Re.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:06.733507 
+GET https://img.manwame.com/cover/nvzixueyuandenansheng-2lpZ2.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:07.261180 
+Response https://img.manwame.com/cover/quanqiuyinengkaijujuexingzixiaoshenlei-LObqE.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:07 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:18:50 GMT, cache-control: max-age=2592000, age: 977, last-modified: Sun, 02 Aug 2026 12:18:50 GMT, cf-cache-status: HIT, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=mie7dNCApwGRGdaQH8JKjLqIshXaipPbT59kcC5q5kamByqBlyiKY3fYIY4MVjKEYa%2BHS3wewtNdG0yx3m4g9KOkjgXpCnQMe8upII3fI2uKuUpYWaisNPrT2LtR4V0O1cc%3D"}]}, cf-ray: a24d1ee52ddc8092-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:07.336528 
+Response https://img.manwame.com/cover/97495-ozxVP.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:07 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:18:50 GMT, cache-control: max-age=2592000, age: 977, last-modified: Sun, 02 Aug 2026 12:18:50 GMT, cf-cache-status: HIT, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=gY7hpNfKo2WlWrrTCivOlPVI7v8g8EDBQdcwlXMrPi4YZg0MJPsaSx0tXTQf9WMxpJfXVbqNzb6fppA9Bist7pruXea68S4ZP1NS09Nfu%2BtJHxcgxj4sJqVLVMV9SVkXRn4%3D"}]}, cf-ray: a24d1ee5acffa339-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:07.692064 
+Response https://img.manwame.com/cover/mowangtuixiujihua-8mmnafWE1K.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:08 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:18:50 GMT, cache-control: max-age=2592000, age: 977, last-modified: Sun, 02 Aug 2026 12:18:50 GMT, cf-cache-status: HIT, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Tiz3q%2FI1c5jSZ5KRAx0cIgxos7fcChcLBmkFI0unOipCUCbMWpz7zdFEEj5Pg6o4PhUXVRqw3qMntkF4ZxBHJmlng%2B0SNo%2BhVBIrz9y5qYk12WwCaKt2JIPi6mRrTLrGYVk%3D"}]}, cf-ray: a24d1ee72f8e4a9d-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:07.756468 
+Response https://img.manwame.com/cover/sanliufanpaidexueyuanshengcunji-W6Rf9n9R.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:08 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Mon, 31 Aug 2026 03:59:43 GMT, cache-control: max-age=2592000, age: 117324, last-modified: Sat, 01 Aug 2026 03:59:43 GMT, cf-cache-status: HIT, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=oVSBr8KBWR%2FjVsd3qYzj8V51bjrc0AoLDk6IciY0YHlJiH9M6v9QVCacDjUgyfLqxSOtSxrYwAvZyBCChK229M3zUSMJGsqbfsMhCDUlOtxLPsNn3zl33AHL6%2FwH69Cp2M4%3D"}]}, cf-ray: a24d1ee76a4ea9c8-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:07.803497 
+Response https://img.manwame.com/cover/chongshengzhe-3eexOUd6P4.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:08 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:18:50 GMT, cache-control: max-age=2592000, age: 977, last-modified: Sun, 02 Aug 2026 12:18:50 GMT, cf-cache-status: HIT, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=MdhQRH%2BlVmcgakzHbWJ0UQ12dTouYKh%2Bp3B2yTlCniMOR5Kv0%2F5fC0xQeEDBVp4QBbjRfHQ9U5rK3nSS6KJCVeGVB%2FWjK60rewJgYqX9hEKlxDzAo2VstEkcOXO3MVQZ8FM%3D"}]}, cf-ray: a24d1ee7cacf8412-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:07.883986 
+Response https://img.manwame.com/cover/anshenbang-Gp7Re.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:08 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:18:50 GMT, cache-control: max-age=2592000, age: 977, last-modified: Sun, 02 Aug 2026 12:18:50 GMT, cf-cache-status: HIT, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=JqHsqhTeP53acbXWrgKZlTpEyUTIVGYwamJTFhmE3Vdcz9wJr%2BET4kc5vUYQIjj0I9VYxfwVtaRKwQ1TIWMhdcbUnV8AunjfuXC40SXDbkFO39BXpqrV5MuiZk19%2FLAZ%2BC8%3D"}]}, cf-ray: a24d1ee84b7f8433-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:08.258135 
+Response https://img.manwame.com/cover/nvzixueyuandenansheng-2lpZ2.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:08 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:35:08 GMT, cache-control: max-age=2592000, last-modified: Sun, 02 Aug 2026 12:35:08 GMT, cf-cache-status: MISS, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ydZ8jvO5Bbf1b5%2BvwSnh%2BPepSf%2F%2Fjlicc9JwB3eVOxrSD9MNEb6o1%2F7DTC3IaHXuWExibEHpQ7B92YAcxu561avmjKddR9DC6w6pvOKwWyPk3hVXwd1v%2FYVQ28xU01Ad2Dc%3D"}]}, cf-ray: a24d1ee82f43b856-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:08.576423 
+GET https://manwame.com/book/97495-ozxVP
+headers:
+{User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36, cookie: PHPSESSID=m4eshu9egcmomdbbfumc6rkuh6}
+data:
+null
+
+info Network 2026-08-02 20:35:09.984164 
+Response https://manwame.com/book/97495-ozxVP 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:10 GMT, content-type: text/html; charset=utf-8, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Thu, 19 Nov 1981 08:52:00 GMT, cache-control: no-store, no-cache, must-revalidate, pragma: no-cache, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=nx3kHhHLA7RQIk3ImGHkhWrkwAyST8zKJPYXZU1Y3OKHFnB6ouS3MFkSZFr9S%2BuhC9XIWAc9N5cL8jCH0DHLIQX7gkySblE1W5EL1DGSd1BLfQcXkxeNyfEhrpKqCw%3D%3D"}]}, cf-cache-status: DYNAMIC, vary: accept-encoding, alt-svc: h3=":443"; ma=86400, cf-ray: a24d1ef47f7582cd-TPE}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="renderer" content="webkit">
+<title>冷冽如焰 - 漫蛙漫画</title>
+<meta name="keywords" content="">
+<meta name="description" content="雪山白家的族长过世后，白家家世衰败，陷入粮食短缺的悲惨困境。族长儿子白武震接任族长一职，孤身前往北天盟，踏入江湖以重振家世。身背养育家族重任的白武震，...">
+<link rel="stylesheet" href="/static/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/static/css/style.min.css?v=1.0.1">
+
+
+<script defer src="https://event.manwame.com/script.js" data-website-id="6e450c98-ce54-457b-87fb-77006b7aab23" data-domains="manwame.com"></script></head>
+<body>
+<div class="site-wrap">
+  
+<header class="site-header">
+  <div class="header-bar">
+    <a class="site-logo" href="/" title="漫蛙漫画">
+            <strong>漫蛙漫画</strong>
+    </a>
+    <!-- <a class="header-action" href="/history" aria-label="阅读记录"><i class="fa fa-history" aria-hidden="true"></i></a> -->
+  </div>
+  <form class="search-form" action="/search" method="get">
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <input type="search" name="q" value="" placeholder="搜索漫画名称">
+    <button type="submit">搜索</button>
+    <input type="hidden" name="__searchtoken__" value="180f474280b16e4c1690ec08b7b5376a" />  </form>
+  </header>
+
+
+<main class="page-main">
+  <section class="comic-profile">
+    <div class="profile-cover">
+      <img src="https://img.manwame.com/cover/97495-ozxVP.webp" alt="冷冽如焰" loading="lazy" decoding="async">
+    </div>
+    <div class="profile-text">
+      <h1>冷冽如焰</h1>
+      <p>作者：INO</p>
+      <p>地区：</p>
+      <p>状态：连载中</p>
+            <p>最新：<a href="/book/97495-ozxVP/90.html">第89话</a></p>
+      <p>更新：2026-08-02 19:08</p>
+          </div>
+  </section>
+
+  
+  <div class="action-row">
+    <a class="read-button" href="/book/97495-ozxVP/1.html">开始阅读</a>    <a class="more-button" href="/category">同类漫画</a>
+  </div>
+
+  <section class="content-section">
+    <div class="section-title"><h2>作品简介</h2></div>
+    <div class="intro-text">雪山白家的族长过世后，白家家世衰败，陷入粮食短缺的悲惨困境。族长儿子白武震接任族长一职，孤身前往北天盟，踏入江湖以重振家世。身背养育家族重任的白武震，...</div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-title">
+      <h2>章节目录</h2>
+      <button class="sort-button" type="button" data-chapter-reverse>...
+
+info Network 2026-08-02 20:35:11.048267 
+GET https://img.manwame.com/cover/97584-XPMwB.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:11.070265 
+GET https://mwappimgs.cc/static/upload3/book/id/459473/cover_1.jpg?v=1768217721
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:11.903561 
+Response https://img.manwame.com/cover/97584-XPMwB.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:12 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:18:50 GMT, cache-control: max-age=2592000, age: 981, last-modified: Sun, 02 Aug 2026 12:18:50 GMT, cf-cache-status: HIT, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=jkHNElvjkvbgpandfYIiSUr4yPZs0aqbtcM%2Fytu%2BEjrYv06bPdQDkitw0hUSiAam0qO%2BMp0ogULL1XvFWphIkbAFWA3jTmcH00SXSqek%2Byp3T%2FRqamJfBr4Z98QsvcNiK2Y%3D"}]}, cf-ray: a24d1f023bf24a33-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:12.651996 
+GET https://img.manwame.com/cover/hanbingmoriwotunleqianyiwuzi-2AKaK.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:12.661461 
+Response https://mwappimgs.cc/static/upload3/book/id/459473/cover_1.jpg?v=1768217721 200
+headers:
+{server: nginx, date: Sun, 02 Aug 2026 12:37:09 GMT, content-type: image/jpeg, content-length: 7434, last-modified: Mon, 12 Jan 2026 11:35:21 GMT, etag: "6964dc79-1d0a", strict-transport-security: [max-age=31536000, max-age=31536000], expires: Tue, 01 Sep 2026 12:37:09 GMT, cache-control: max-age=2592000, accept-ranges: bytes}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:12.739723 
+GET https://img.manwame.com/cover/baijianjiaozhudaren-2lKDE.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:12.808691 
+GET https://img.manwame.com/cover/zhaohuanzhizhudangyibianjianglinrenjian-GeDwM.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:13.471720 
+GET https://img.manwame.com/cover/monanyiqi-RygRFaVnA.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:13.490878 
+Response https://img.manwame.com/cover/hanbingmoriwotunleqianyiwuzi-2AKaK.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:13 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Mon, 31 Aug 2026 17:18:07 GMT, cache-control: max-age=2592000, age: 69426, last-modified: Sat, 01 Aug 2026 17:18:07 GMT, cf-cache-status: HIT, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=6mCoKP5WfMgTziOxFXHHuhoR6IqzPlm3ngrvfqOETEhxptReyQxRTC8GLLdqH075FuU0tIPUI7a5lsUW6ETfQ2k5oT2DlBlTVz2olvYY9m4kDd0%2FaWvGNoFUn1mH01WT9GI%3D"}]}, cf-ray: a24d1f0bfed94a68-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:13.555263 
+Response https://img.manwame.com/cover/baijianjiaozhudaren-2lKDE.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:14 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Mon, 31 Aug 2026 02:08:11 GMT, cache-control: max-age=2592000, age: 124022, last-modified: Sat, 01 Aug 2026 02:08:11 GMT, cf-cache-status: HIT, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=3pCNSQd%2B2bqTupFDBa7oJ6hFBv%2B2WN1ZckB9tQ2SppvIYiDE%2B8VraqGg5JwzzClSqHGta5Q3U3HWGZddvOC1dnYFgEfBPgMhnxkRaGBT4EGyUdgiaxd%2FlNiZfICAyxkBq9I%3D"}]}, cf-ray: a24d1f0c799c4a28-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:13.626963 
+Response https://img.manwame.com/cover/zhaohuanzhizhudangyibianjianglinrenjian-GeDwM.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:14 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:18:50 GMT, cache-control: max-age=2592000, age: 983, last-modified: Sun, 02 Aug 2026 12:18:50 GMT, cf-cache-status: HIT, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=b3BSoisdJlKGfwl4GG3KtspdA0aI4Nf4wyxv9DYe7T5F5preHIMCV5N%2FeUzClwvi%2FbECrhk9LyyqEN%2Bta0j7fDyL1wf0Dr%2FR%2FQeeR8pLeGjx0f0xCKo5z%2BJabsTvYunl7BQ%3D"}]}, cf-ray: a24d1f0cdc714a01-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:14.360888 
+Response https://img.manwame.com/cover/monanyiqi-RygRFaVnA.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:14 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:18:50 GMT, cache-control: max-age=2592000, age: 984, last-modified: Sun, 02 Aug 2026 12:18:50 GMT, cf-cache-status: HIT, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=82ncGNsiAdjkzEFaHwZPq05SpkkBojCYXUDUKSwwdIacInh3Voh3fcFTYcT55I9zBOHkbVWOKrJo7%2FirBZKJhmSGLEYJdJA9LTzf%2FNH07Q2ODDKdtpEdV%2FbYfqCwa6moDh4%3D"}]}, cf-ray: a24d1f117c8c8094-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:14.812921 
+GET https://img.manwame.com/cover/shanshuodeaiqing-LXemV.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:15.561131 
+GET https://img.manwame.com/cover/yaweinonstop-244DJ.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:15.561281 
+GET https://img.manwame.com/cover/xiuyangzhongdekelaopi-G6w1X.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:15.590859 
+GET https://img.manwame.com/cover/nanfangdeniaohebeifangdeniao-LX9PG.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:15.759972 
+GET https://img.manwame.com/cover/perfume-5oQXB.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:16.073965 
+Response https://img.manwame.com/cover/shanshuodeaiqing-LXemV.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:16 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:35:16 GMT, cache-control: max-age=2592000, last-modified: Sun, 02 Aug 2026 12:35:16 GMT, cf-cache-status: MISS, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=uA9QvWhareZI8OWRh%2B%2B02tAqW2lrGe6lTkEpQDXH8%2FMkSA7v7iddJ7LCcS5i8NGcWDBQLyHyR5MN3IkeXC536X1RCJdvBlVSFOn22qBBUSS0HK4jglTk83cq08LIdgO36N0%3D"}]}, cf-ray: a24d1f197fbb075c-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:16.685503 
+Response https://img.manwame.com/cover/yaweinonstop-244DJ.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:17 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:35:17 GMT, cache-control: max-age=2592000, last-modified: Sun, 02 Aug 2026 12:35:17 GMT, cf-cache-status: MISS, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=o2wQcxRVVYlKS8eqi7ZdOfuHdqeHWKfZtAPGjiwo6x4UHD9Ueg63W%2BhWu9U7wUsokDEvW2W8RUYHCl491BqfH2cadNSvbSFIemRF7ldcini0puHHdhkApK1A%2B52h4FA48Ds%3D"}]}, cf-ray: a24d1f1d6fc556ef-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:16.965582 
+Response https://img.manwame.com/cover/nanfangdeniaohebeifangdeniao-LX9PG.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:17 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:35:17 GMT, cache-control: max-age=2592000, last-modified: Sun, 02 Aug 2026 12:35:17 GMT, cf-cache-status: MISS, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=l9sfZwbGAs9Al1ZzLDUjSQGCeMfqj2YzU3s2ng12GvpTAbOs1blxxfA8aCuUTBOVvqb2iwWCPkAYGTkzV4gXD41uxPfFSx8vz0gsQ7%2B5WOJKf3PYMWdGxXcgJy16h3CFf%2BE%3D"}]}, cf-ray: a24d1f1eac6249f7-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:16.966764 
+Response https://img.manwame.com/cover/xiuyangzhongdekelaopi-G6w1X.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:17 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:35:17 GMT, cache-control: max-age=2592000, last-modified: Sun, 02 Aug 2026 12:35:17 GMT, cf-cache-status: MISS, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=YleSlgw0X7i0A0xLzofJeC50sQ%2FpBuRIPhdoUYuRCDtxjZKQZQ%2Fp0%2Btm7MXmhVaOIrxdmPJfIx6Q9wSRtP3fP%2BA2K2L73Grxa%2Bc27o%2FmubYoBNkAgD3VY3vhJE%2FJLUJc5fE%3D"}]}, cf-ray: a24d1f1e9df6842d-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:17.398885 
+Response https://img.manwame.com/cover/perfume-5oQXB.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:17 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:35:17 GMT, cache-control: max-age=2592000, last-modified: Sun, 02 Aug 2026 12:35:17 GMT, cf-cache-status: MISS, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=j8eMneiYXIGNDvglBnwpRh3HXy0UrALafW0I4iz%2F5bNZl85mVZea2nIPzYK5h0R8b5mT5CGNnO%2B2oiMtNDP5uVx928HW5UL6CNtVoPmR0P1wN5e1COpaj%2FCduFu8i3XqamU%3D"}]}, cf-ray: a24d1f21cfa5152a-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Network 2026-08-02 20:35:17.436787 
+GET https://manwame.com/book/nvzixueyuandenansheng-2lpZ2
+headers:
+{User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36, cookie: PHPSESSID=m4eshu9egcmomdbbfumc6rkuh6}
+data:
+null
+
+info Network 2026-08-02 20:35:18.817527 
+Response https://manwame.com/book/nvzixueyuandenansheng-2lpZ2 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:19 GMT, content-type: text/html; charset=utf-8, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Thu, 19 Nov 1981 08:52:00 GMT, cache-control: no-store, no-cache, must-revalidate, pragma: no-cache, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=i%2FJUHu24bzsZhOpraTuKeSqfxuTukS8Ab7%2FA7F2jMwNgSwzgXUp%2FKzs0R9ynqZhCQHRbL6Y0u84vH%2BKqTP9j2i3jt%2FXSRgLkisNc8vmqtHRbhLW8pA2hS2Q9KEvDbQ%3D%3D"}]}, cf-cache-status: DYNAMIC, vary: accept-encoding, alt-svc: h3=":443"; ma=86400, cf-ray: a24d1f29dd9177f1-TPE}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="renderer" content="webkit">
+<title>女子学院的男生 - 漫蛙漫画</title>
+<meta name="keywords" content="">
+<meta name="description" content="美女如云的女校，突然转来一个男生！！！或许在其他人眼里这是一个梦幻的天堂，可事实上，却是个无法想像的未来......根据酷匠网同名小说《女子学院的男生》改编">
+<link rel="stylesheet" href="/static/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/static/css/style.min.css?v=1.0.1">
+
+
+<script defer src="https://event.manwame.com/script.js" data-website-id="6e450c98-ce54-457b-87fb-77006b7aab23" data-domains="manwame.com"></script></head>
+<body>
+<div class="site-wrap">
+  
+<header class="site-header">
+  <div class="header-bar">
+    <a class="site-logo" href="/" title="漫蛙漫画">
+            <strong>漫蛙漫画</strong>
+    </a>
+    <!-- <a class="header-action" href="/history" aria-label="阅读记录"><i class="fa fa-history" aria-hidden="true"></i></a> -->
+  </div>
+  <form class="search-form" action="/search" method="get">
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <input type="search" name="q" value="" placeholder="搜索漫画名称">
+    <button type="submit">搜索</button>
+    <input type="hidden" name="__searchtoken__" value="e8a7ee80aaa7c19539c7f1783bcf1681" />  </form>
+  </header>
+
+
+<main class="page-main">
+  <section class="comic-profile">
+    <div class="profile-cover">
+      <img src="https://img.manwame.com/cover/nvzixueyuandenansheng-2lpZ2.webp" alt="女子学院的男生" loading="lazy" decoding="async">
+    </div>
+    <div class="profile-text">
+      <h1>女子学院的男生</h1>
+      <p>作者：触岛漫画</p>
+      <p>地区：国内</p>
+      <p>状态：连载中</p>
+            <p>最新：<a href="/book/nvzixueyuandenansheng-2lpZ2/493.html">新作来袭</a></p>
+      <p>更新：2025-12-18 03:37</p>
+          </div>
+  </section>
+
+    <div class="tag-strip">
+        <a href="/category/theme/gaoxiao">搞笑</a>
+        <a href="/category/theme/xiaoyuan">校园</a>
+        <a href="/category/theme/hougong">后宫</a>
+        <a href="/category/theme/youmo">幽默</a>
+        <a href="/category/theme/meixing">美型</a>
+      </div>
+  
+  <div class="action-row">
+    <a class="read-button" href="/book/nvzixueyuandenansheng-2lpZ2/1.html">开始阅读</a>    <a class="more-button" href="/category">同类漫画</a>
+  </div>
+
+ ...
+
+info Network 2026-08-02 20:35:18.892225 
+GET https://img.manwame.com/cover/zuijiuhouhuashenjiewenkuangmodeyouren-L349D.webp
+headers:
+{user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36}
+data:
+null
+
+info Network 2026-08-02 20:35:20.241378 
+Response https://img.manwame.com/cover/zuijiuhouhuashenjiewenkuangmodeyouren-L349D.webp 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:20 GMT, content-type: image/webp, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, expires: Tue, 01 Sep 2026 12:35:20 GMT, cache-control: max-age=2592000, last-modified: Sun, 02 Aug 2026 12:35:20 GMT, cf-cache-status: MISS, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=wAMY3Il8hvM32OKyJ%2BlE4FbT2DpeAK9%2FFk%2Blu59KaZ3bXwMyHlMPx%2FBmYgckOcfYghbSprRpQTwxFLtm8hDb2m3fE8yVti%2F6PgomGUNpG3W3GJnH06Y0RL2o08jk9Q7a5e8%3D"}]}, cf-ray: a24d1f32effd828b-TPE, alt-svc: h3=":443"; ma=86400}
+Instance of 'ResponseBody'
+
+info Reader 2026-08-02 20:35:22.395489 
+Detect available RAM: 6731100160, set image cache size to 524288000
+
+info Network 2026-08-02 20:35:22.396778 
+GET https://manwame.com/book/nvzixueyuandenansheng-2lpZ2/1.html
+headers:
+{User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36, cookie: PHPSESSID=m4eshu9egcmomdbbfumc6rkuh6}
+data:
+null
+
+info Network 2026-08-02 20:35:23.619403 
+Response https://manwame.com/book/nvzixueyuandenansheng-2lpZ2/1.html 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:24 GMT, content-type: text/html; charset=utf-8, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=alRYzlHjU%2BANSfy3MHS5UM55ZnpYYMQcVIbocekGZY8zQQdVA5lL98rSBxZcQqR3bfZlbioNEBHY801JpFC504NA%2BPLPIuOE5PFzKqbljreJDmbXi6X1Y25hpM%2FIug%3D%3D"}]}, cf-cache-status: DYNAMIC, vary: accept-encoding, alt-svc: h3=":443"; ma=86400, cf-ray: a24d1f48798c808e-TPE}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="renderer" content="webkit">
+<title>女子学院的男生漫画_【1】地狱or天堂？ - 漫蛙漫画</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="/static/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/static/css/style.min.css?v=1.0.1">
+
+
+<script defer src="https://event.manwame.com/script.js" data-website-id="6e450c98-ce54-457b-87fb-77006b7aab23" data-domains="manwame.com"></script></head>
+<body>
+<div class="site-wrap">
+  
+
+<header class="reader-top">
+  <a href="/book/nvzixueyuandenansheng-2lpZ2" aria-label="返回目录"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+  <div>
+    <a href="/book/nvzixueyuandenansheng-2lpZ2">女子学院的男生</a>
+    <h1>【1】地狱or天堂？</h1>
+  </div>
+  <a href="/" aria-label="首页"><i class="fa fa-home" aria-hidden="true"></i></a>
+</header>
+
+<main class="reader-body">
+  <div class="reader-stage chapter-image-placeholder" id="chapter-images" aria-live="polite">
+    <span>正在准备章节图片</span>
+    <p>请稍候</p>
+  </div>
+  <div id="chapter-navigation" class="reader-next"></div>
+</main>
+
+<nav class="chapter-nav" id="chapter-nav" aria-label="章节导航">
+    <span>没有了</span>
+    <a href="/book/nvzixueyuandenansheng-2lpZ2"><i class="fa fa-list-ul" aria-hidden="true"></i>目录</a>
+    <a href="/book/nvzixueyuandenansheng-2lpZ2/2.html" id="nextChapterBtn">下一章<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+  </nav>
+
+
+
+
+
+</div>
+<button class="backtop" type="button" data-backtop aria-label="返回顶部"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+<script src="/static/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="/static/js/cms-2.0.1.min.js?v=1.0.1"></script>
+<script src="/static/js/global.min.js?v=1.0.1"></script>
+<script src="/static/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script>var config = {index_url: '/'}, params = '3v54me78wetaU4VsNXRyQZgKNK2D54vektoA8B+lfZN80l+0h+YB6AE91UUHC209ODn2wux5hhVr+yFvacmBoIsxwv3B5WPrVKlPyioNR5Sx32HtSx8+i8EbckM8gKfSTxrWq2VfZ1XtbAMIBQcL4z+0XZxkLtGy/XlzLyjMK6/LaCsC39VYpPfFlZKyVfChkle3Uic52CrqgY2i1iWjQ/uJaFecJNdsfyX2Aj0/xmIINzbxbpGB3Y1cglocj3hQHkYgHIvVPbWcDB/hQxd31L53vOgX1hynUi22YiB3A0ieDWYbCm55jEKnIXDRple+31Lu2/l8MkZCr+kw/1lp3nAbWdWLrpiRju7RoZXCxVaWfBbWhoWExndDmVWt7Clmbqn...
+
+warning JS Engine 2026-08-02 20:35:23.621780 
+Retrying a read-only source call after a JavaScript syntax error: SyntaxError: unexpected data at the end
+    at <input>:1:1
+    at parse (native)
+    at decryptParams (ManWaBa:44:23)
+
+
+info Network 2026-08-02 20:35:23.827065 
+GET https://manwame.com/book/nvzixueyuandenansheng-2lpZ2/1.html
+headers:
+{User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36, cookie: PHPSESSID=m4eshu9egcmomdbbfumc6rkuh6}
+data:
+null
+
+info Network 2026-08-02 20:35:24.950590 
+Response https://manwame.com/book/nvzixueyuandenansheng-2lpZ2/1.html 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:25 GMT, content-type: text/html; charset=utf-8, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=MIb4xrTW0A6%2BNbTU%2FYgE7VBRhzN%2Fyliz0NuYKEMHvFVGDHrgfDFZqSBoYKRs9hDflZlTFWi5UbwDujCqzDneVQRmdsrCVJFSU2CC6sBOp4RgsUXJa5U4mLcvOa3YUQ%3D%3D"}]}, cf-cache-status: DYNAMIC, vary: accept-encoding, alt-svc: h3=":443"; ma=86400, cf-ray: a24d1f521a78828f-TPE}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="renderer" content="webkit">
+<title>女子学院的男生漫画_【1】地狱or天堂？ - 漫蛙漫画</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="/static/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/static/css/style.min.css?v=1.0.1">
+
+
+<script defer src="https://event.manwame.com/script.js" data-website-id="6e450c98-ce54-457b-87fb-77006b7aab23" data-domains="manwame.com"></script></head>
+<body>
+<div class="site-wrap">
+  
+
+<header class="reader-top">
+  <a href="/book/nvzixueyuandenansheng-2lpZ2" aria-label="返回目录"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+  <div>
+    <a href="/book/nvzixueyuandenansheng-2lpZ2">女子学院的男生</a>
+    <h1>【1】地狱or天堂？</h1>
+  </div>
+  <a href="/" aria-label="首页"><i class="fa fa-home" aria-hidden="true"></i></a>
+</header>
+
+<main class="reader-body">
+  <div class="reader-stage chapter-image-placeholder" id="chapter-images" aria-live="polite">
+    <span>正在准备章节图片</span>
+    <p>请稍候</p>
+  </div>
+  <div id="chapter-navigation" class="reader-next"></div>
+</main>
+
+<nav class="chapter-nav" id="chapter-nav" aria-label="章节导航">
+    <span>没有了</span>
+    <a href="/book/nvzixueyuandenansheng-2lpZ2"><i class="fa fa-list-ul" aria-hidden="true"></i>目录</a>
+    <a href="/book/nvzixueyuandenansheng-2lpZ2/2.html" id="nextChapterBtn">下一章<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+  </nav>
+
+
+
+
+
+</div>
+<button class="backtop" type="button" data-backtop aria-label="返回顶部"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+<script src="/static/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="/static/js/cms-2.0.1.min.js?v=1.0.1"></script>
+<script src="/static/js/global.min.js?v=1.0.1"></script>
+<script src="/static/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script>var config = {index_url: '/'}, params = 'tOKTMfs6rMgHDHFcl6b2vtJP2Jvjlqy1FfkgEhYOkYMCNrSIag0Y33xvIS4k2R6PTTlJkQ3ubmWo/6OVn9+QBXXOEBeAqeB8t9ohYWUJwL36aw84Xe4dGL9VLUrTqYTRpZe2MstnGl19Q4kOGdD9Efl39XZc9gchBR0n+usnraixchtAIIhUx/+OwvyQHOKzhv6/YlquTVgBPiSLWKhNBdD32m4QzYeziINH+F/nsFHdV/H75AtbUq6gbXW1WYIScl473G3IlihL/Y6qtoxlhjnjW4HsY+2EXMsFmly8sdlDublHa2FzFXRYjYsiUKWd96nELCKXaPCB8+JYQRKM5znKxsNWnii9OQwo63jLEeDD7Vmq1+vKT+QB/mHswikD4+O...
+
+error Network 2026-08-02 20:35:24.954600 
+SyntaxError: unexpected data at the end
+    at <input>:1:1
+    at parse (native)
+    at decryptParams (ManWaBa:44:23)
+
+
+
+warning JS Engine 2026-08-02 20:35:27.288726 
+Retrying a read-only source call after a JavaScript syntax error: SyntaxError: unexpected data at the end
+    at <input>:1:1
+    at parse (native)
+    at decryptParams (ManWaBa:44:23)
+
+
+info Network 2026-08-02 20:35:27.494831 
+GET https://manwame.com/book/nvzixueyuandenansheng-2lpZ2/1.html
+headers:
+{User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36, cookie: PHPSESSID=m4eshu9egcmomdbbfumc6rkuh6}
+data:
+null
+
+info Network 2026-08-02 20:35:28.739853 
+Response https://manwame.com/book/nvzixueyuandenansheng-2lpZ2/1.html 200
+headers:
+{date: Sun, 02 Aug 2026 12:35:29 GMT, content-type: text/html; charset=utf-8, server: cloudflare, nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}, report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=mF4iOarxguYb8zqaEMpIIc9fgGnZRI94iOKs62iT0xSwmMpVDz5dC5XZtUG8hVIcyUe94oVM1VLAcC3KjfkWW%2Bpf5jfz5Bjh4devGYr2v86p97E5wQIBV93DoLLAzQ%3D%3D"}]}, cf-cache-status: DYNAMIC, vary: accept-encoding, alt-svc: h3=":443"; ma=86400, cf-ray: a24d1f69cb614a5a-TPE}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="renderer" content="webkit">
+<title>女子学院的男生漫画_【1】地狱or天堂？ - 漫蛙漫画</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="/static/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/static/css/style.min.css?v=1.0.1">
+
+
+<script defer src="https://event.manwame.com/script.js" data-website-id="6e450c98-ce54-457b-87fb-77006b7aab23" data-domains="manwame.com"></script></head>
+<body>
+<div class="site-wrap">
+  
+
+<header class="reader-top">
+  <a href="/book/nvzixueyuandenansheng-2lpZ2" aria-label="返回目录"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+  <div>
+    <a href="/book/nvzixueyuandenansheng-2lpZ2">女子学院的男生</a>
+    <h1>【1】地狱or天堂？</h1>
+  </div>
+  <a href="/" aria-label="首页"><i class="fa fa-home" aria-hidden="true"></i></a>
+</header>
+
+<main class="reader-body">
+  <div class="reader-stage chapter-image-placeholder" id="chapter-images" aria-live="polite">
+    <span>正在准备章节图片</span>
+    <p>请稍候</p>
+  </div>
+  <div id="chapter-navigation" class="reader-next"></div>
+</main>
+
+<nav class="chapter-nav" id="chapter-nav" aria-label="章节导航">
+    <span>没有了</span>
+    <a href="/book/nvzixueyuandenansheng-2lpZ2"><i class="fa fa-list-ul" aria-hidden="true"></i>目录</a>
+    <a href="/book/nvzixueyuandenansheng-2lpZ2/2.html" id="nextChapterBtn">下一章<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+  </nav>
+
+
+
+
+
+</div>
+<button class="backtop" type="button" data-backtop aria-label="返回顶部"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+<script src="/static/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="/static/js/cms-2.0.1.min.js?v=1.0.1"></script>
+<script src="/static/js/global.min.js?v=1.0.1"></script>
+<script src="/static/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script>var config = {index_url: '/'}, params = 's848JxeeOJF1FFOFFuqE/x5fzmD83PRV4evvORnxf+G00arnfav5j/3QnNXHRqJGiyl/iauCjtlBT6Dt5KBJMitfot9WzSzGheMTL+JyEJOxu4x8MU29swOT1/zOfhEkCp+MzjCzgQrCLBWamHsySVA31CMHuQwIXibbx2LqZg9oBYe+0WgvM7JfEjKdKewqdz53eyPDJSdMXcGhJfcJr/3fhL2QVgB3npxKbe1K473AmJktl0k/28hUbEg+N66HyzUrNZ1FdqWm4GLgtWP/Cp+Q4o6k4orOo5jnlOc6pyuF0tGvF7vjTG8kLAG4Wuh9C6fEpj/yPc1WUnthQBwxjAldCHeA1KGRveD19SGcJPxYKRZKOpsdDLMcJOSQhNDwPLjNLOO...
+
+error Network 2026-08-02 20:35:28.743596 
+SyntaxError: unexpected data at the end
+    at <input>:1:1
+    at parse (native)
+    at decryptParams (ManWaBa:44:23)
+
+
+
