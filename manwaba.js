@@ -2,9 +2,9 @@
 class ManWaBa extends ComicSource {
   name = "漫蛙漫画";
   key = "manwaba";
-  version = "2.0.1";
+  version = "2.0.3";
   minAppVersion = "1.4.0";
-  url = "https://cdn.jsdelivr.net/gh/venera-app/venera-configs@main/manwaba.js";
+  url = "https://cdn.jsdelivr.net/gh/EricDasha/venera-configs@main/manwaba.js";
 
   settings = {
     domain: {
@@ -266,7 +266,13 @@ class ManWaBa extends ComicSource {
         throw "Invalid status code: " + res.status;
       }
 
-      let paramsMatch = res.body.match(/params\s*=\s*'([^']+)'/);
+      // res.body 可能是 string 或 ArrayBuffer，统一转为 string
+      let body = res.body;
+      if (typeof body !== "string") {
+        body = await Convert.decodeUtf8(body);
+      }
+
+      let paramsMatch = body.match(/params\s*=\s*'([^']+)'/);
       if (!paramsMatch) {
         throw "Failed to extract params from chapter page";
       }
@@ -274,12 +280,21 @@ class ManWaBa extends ComicSource {
 
       let decrypted = await this.decryptParams(params);
 
-      let host = decrypted.images_hosts && decrypted.images_hosts[0];
+      let host =
+        (decrypted.images_hosts && decrypted.images_hosts[0]) ||
+        decrypted.images_domain ||
+        decrypted.cdnurl ||
+        "";
       if (!host) {
         throw "No image host found";
       }
 
-      let images = decrypted.chapter_images.map((path) => `${host}/${path}`);
+      let chapterImages = decrypted.chapter_images || [];
+      if (chapterImages.length === 0) {
+        throw "No chapter images found";
+      }
+
+      let images = chapterImages.map((path) => `${host}/${path}`);
 
       return { images: images };
     },
