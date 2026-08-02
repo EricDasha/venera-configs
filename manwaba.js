@@ -1,175 +1,127 @@
-/** @type {import('./_venera_.js')} */
 class ManWaBa extends ComicSource {
-  name = "漫蛙漫画";
+  name = "漫蛙吧";
   key = "manwaba";
-  version = "2.0.3";
+  version = "2.0.0";
   minAppVersion = "1.4.0";
-  url = "https://cdn.jsdelivr.net/gh/EricDasha/venera-configs@main/manwaba.js";
+  url = "https://cdn.jsdelivr.net/gh/venera-app/venera-configs@main/manwaba.js";
 
-  settings = {
-    domain: {
-      title: "主域名",
-      type: "input",
-      default: "manwame.com",
-    },
-  };
+  baseUrl = "https://manwame.com";
+  aesKey = "355626526f52254a6640704a50796446";
 
-  get baseUrl() {
-    let domain = this.loadSetting("domain") || "manwame.com";
-    return `https://${domain}`;
-  }
-
-  /// AES-128-CBC 解密密钥 (hex)
-  aesKeyHex = "355626526f52254a6640704a50796446";
-
-  /// hex 字符串转 ArrayBuffer
-  hexToBytes(hex) {
-    let buf = new ArrayBuffer(hex.length / 2);
-    let view = new Uint8Array(buf);
-    for (let i = 0; i < hex.length; i += 2) {
-      view[i / 2] = parseInt(hex.substring(i, i + 2), 16);
-    }
-    return buf;
-  }
-
-  /// 解密章节图片参数
-  async decryptParams(params) {
-    let key = this.hexToBytes(this.aesKeyHex);
-    let encrypted = await Convert.decodeBase64(params);
-    let view = new Uint8Array(encrypted);
-    let iv = view.slice(0, 16).buffer;
-    let ciphertext = view.slice(16).buffer;
-    let decrypted = await Convert.decryptAesCbc(ciphertext, key, iv);
-    let json = await Convert.decodeUtf8(decrypted);
-    return JSON.parse(json);
-  }
-
-  /// 解析漫画卡片
-  parseCard(e) {
-    let coverLink = e.querySelector("a.manga-cover");
-    let href = coverLink.attributes["href"];
+  parseMangaCard(card) {
+    let link = card.querySelector("a.manga-cover") || card.querySelector("a");
+    let href = link.attributes["href"];
     let id = href.split("/").pop();
-    let img = coverLink.querySelector("img");
-    let title = img.attributes["alt"];
-    let cover = img.attributes["src"];
-    let subTitle = e.querySelector("div.manga-meta > p")?.text?.trim() || "";
+    let img = link.querySelector("img");
+    let title = img ? (img.attributes["alt"] || "") : "";
+    let cover = img ? img.attributes["src"] : "";
     return new Comic({
       id: id,
       title: title,
       cover: cover,
-      subTitle: subTitle,
     });
   }
 
-  /// 从分页元素中提取最大页码
-  parseMaxPage(document) {
-    let maxPage = 1;
-    let links = document.querySelectorAll(".pagination a");
-    for (let a of links) {
-      let href = a.attributes["href"] || "";
-      let match = href.match(/(?:page[=/])(\d+)/);
-      if (match) {
-        maxPage = Math.max(maxPage, parseInt(match[1]));
-      }
+  async decryptParams(params) {
+    let keyHex = this.aesKey;
+    let keyBytes = new Uint8Array(keyHex.length / 2);
+    for (let i = 0; i < keyHex.length; i += 2) {
+      keyBytes[i / 2] = parseInt(keyHex.substr(i, 2), 16);
     }
-    return maxPage;
+    let key = keyBytes.buffer;
+    let decoded = await Convert.decodeBase64(params);
+    let allBytes = new Uint8Array(decoded);
+    let iv = allBytes.slice(0, 16).buffer;
+    let ciphertext = allBytes.slice(16).buffer;
+    let decrypted = await Convert.decryptAesCbc(ciphertext, key, iv);
+    let jsonStr = await Convert.decodeUtf8(decrypted);
+    return JSON.parse(jsonStr);
   }
 
-  // 探索页面
   explore = [
     {
       title: this.name,
       type: "singlePageWithMultiPart",
-      load: async () => {
+      load: async (page) => {
         let res = await Network.get(this.baseUrl);
         if (res.status !== 200) {
           throw "Invalid status code: " + res.status;
         }
         let document = new HtmlDocument(res.body);
         let result = {};
+
+        let heroComics = document
+          .querySelectorAll(".hero-panel")
+          .map((e) => {
+            let href = e.attributes["href"];
+            let id = href.split("/").pop();
+            let img = e.querySelector("img");
+            let title = img ? (img.attributes["alt"] || "") : "";
+            let cover = img ? img.attributes["src"] : "";
+            let em = e.querySelector("em");
+            let subTitle = em ? em.text.trim() : "";
+            return new Comic({ id: id, title: title, cover: cover, subTitle: subTitle });
+          });
+        if (heroComics.length > 0) {
+          result["热门推荐"] = heroComics;
+        }
+
         let sections = document.querySelectorAll("section.content-section");
         for (let section of sections) {
           let titleEl = section.querySelector("h2");
           if (!titleEl) continue;
-          let title = titleEl.text.trim();
-          let grid = section.querySelector("div.manga-grid");
-          if (!grid) continue;
-          let cards = grid.querySelectorAll("article.manga-card");
+          let sectionTitle = titleEl.text.trim();
+          let cards = section.querySelectorAll("article.manga-card");
           if (cards.length === 0) continue;
-          result[title] = cards.map((e) => this.parseCard(e));
+          let comics = cards.map((e) => this.parseMangaCard(e));
+          if (comics.length > 0) {
+            result[sectionTitle] = comics;
+          }
         }
-        document.dispose();
+
         return result;
       },
     },
   ];
 
-  // 分类页面
   category = {
     title: this.name,
     parts: [
       {
-        name: "类型",
+        name: "题材",
         type: "fixed",
         categories: [
-          "全部", "热血", "玄幻", "恋爱", "冒险", "古风", "都市",
-          "穿越", "奇幻", "搞笑", "校园", "后宫", "百合", "科幻",
-          "悬疑", "战斗", "重生", "逆袭", "日常", "纯爱",
+          "全部", "玄幻", "搞笑", "格斗", "热血", "古风", "冒险",
+          "悬疑", "都市", "恋爱", "复仇", "科幻", "魔幻", "穿越",
+          "奇幻", "其他", "战斗", "生活", "少女", "百合", "全彩",
+          "校园", "爱情", "橘味", "剧情", "推理", "大女主", "腹黑",
+          "惊悚", "治愈", "逆袭", "总裁", "日常", "动作", "恐怖",
+          "重生", "后宫", "女仆", "纯情", "霸总", "非现代", "纯爱",
+          "少男", "新作", "萌系", "游戏", "偶像", "青春", "浪漫",
         ],
         itemType: "category",
         categoryParams: [
-          "", "rexue", "xuanhuan", "lianai", "maoxian", "gufeng", "dushi",
-          "chuanyue", "qihuan", "gaoxiao", "xiaoyuan", "hougong", "baihe", "kehuan",
-          "xuanyi", "zhandou", "zhongsheng", "nixi", "richang", "chunai",
+          "", "xuanhuan", "gaoxiao", "gedou", "rexue", "gufeng", "maoxian",
+          "xuanyi", "dushi", "lianai", "fuchou", "kehuan", "mohuan", "chuanyue",
+          "qihuan", "qita", "zhandou", "shenghuo", "shaonv", "baihe", "quancai",
+          "xiaoyuan", "aiqing", "juwei", "juqing", "tuili", "danvzhu", "fuhei",
+          "jingsong", "zhiyu", "nixi", "zongcai", "richang", "dongzuo", "kongbu",
+          "zhongsheng", "hougong", "nvpu", "chunqing", "bazong", "feixiandai", "chunai",
+          "shaonan", "xinzuo", "mengxi", "youxi", "ouxiang", "qingchun", "langman",
         ],
       },
     ],
     enableRankingPage: false,
   };
 
-  // 分类漫画
   categoryComics = {
     load: async (category, param, options, page) => {
-      let path = "/category";
-      if (param) path += `/theme/${param}`;
-      if (options[0] !== "all") path += `/area/${options[0]}`;
-      if (options[1] !== "all") path += `/state/${options[1]}`;
-      path += `/order/${options[2]}`;
-      if (page > 1) path += `/page/${page}`;
-
-      let res = await Network.get(this.baseUrl + path);
-      if (res.status !== 200) {
-        throw "Invalid status code: " + res.status;
+      let url = this.baseUrl + "/category";
+      if (param) {
+        url += "/theme/" + param;
       }
-      let document = new HtmlDocument(res.body);
-      let cards = document.querySelectorAll("article.manga-card");
-      let comics = cards.map((e) => this.parseCard(e));
-      let maxPage = this.parseMaxPage(document);
-      document.dispose();
-      return {
-        comics: comics,
-        maxPage: maxPage,
-      };
-    },
-    optionList: [
-      {
-        options: ["all-全部", "guonei-国内", "riben-日本", "hanguo-韩国"],
-      },
-      {
-        options: ["all-全部", "lianzai-连载", "wanjie-完结"],
-      },
-      {
-        options: ["views-热门人气", "update-更新时间"],
-      },
-    ],
-  };
-
-  // 搜索
-  search = {
-    load: async (keyword, options, page) => {
-      let url = `${this.baseUrl}/search?q=${encodeURIComponent(keyword)}`;
       if (page > 1) {
-        url += `&page=${page}`;
+        url += "/page/" + page;
       }
       let res = await Network.get(url);
       if (res.status !== 200) {
@@ -177,53 +129,81 @@ class ManWaBa extends ComicSource {
       }
       let document = new HtmlDocument(res.body);
       let cards = document.querySelectorAll("article.manga-card");
-      let comics = cards.map((e) => this.parseCard(e));
-      let maxPage = this.parseMaxPage(document);
-      document.dispose();
-      return {
-        comics: comics,
-        maxPage: maxPage,
-      };
+      let comics = cards.map((e) => this.parseMangaCard(e));
+
+      let maxPage = page;
+      let pageLinks = document.querySelectorAll("a[href*='/page/']");
+      for (let link of pageLinks) {
+        let href = link.attributes["href"];
+        let match = href.match(/\/page\/(\d+)/);
+        if (match) {
+          let num = parseInt(match[1]);
+          if (num > maxPage) {
+            maxPage = num;
+          }
+        }
+      }
+
+      return { comics: comics, maxPage: maxPage };
     },
     optionList: [],
   };
 
-  // 单个漫画
+  search = {
+    load: async (keyword, options, page) => {
+      let url = this.baseUrl + "/search?q=" + encodeURIComponent(keyword);
+      let res = await Network.get(url);
+      if (res.status !== 200) {
+        throw "Invalid status code: " + res.status;
+      }
+      let document = new HtmlDocument(res.body);
+      let cards = document.querySelectorAll("article.manga-card");
+      let comics = cards.map((e) => this.parseMangaCard(e));
+      return { comics: comics, maxPage: 1 };
+    },
+    optionList: [],
+  };
+
   comic = {
-    // 加载漫画信息
     loadInfo: async (id) => {
-      let url = `${this.baseUrl}/book/${id}`;
+      let url = this.baseUrl + "/book/" + id;
       let res = await Network.get(url);
       if (res.status !== 200) {
         throw "Invalid status code: " + res.status;
       }
       let document = new HtmlDocument(res.body);
 
-      let title = document.querySelector("section.comic-profile h1").text.trim();
-      let cover = document.querySelector("section.comic-profile .profile-cover img").attributes["src"];
+      let title = document.querySelector(".profile-text h1").text.trim();
+      let cover = document.querySelector(".profile-cover img").attributes["src"];
 
       let author = "";
       let status = "";
       let updateTime = "";
-      let profileText = document.querySelector("section.comic-profile .profile-text");
-      if (profileText) {
-        for (let p of profileText.querySelectorAll("p")) {
-          let text = p.text.trim();
-          if (text.startsWith("作者：")) author = text.replace("作者：", "").trim();
-          else if (text.startsWith("状态：")) status = text.replace("状态：", "").trim();
-          else if (text.startsWith("更新：")) updateTime = text.replace("更新：", "").trim();
+      let paragraphs = document.querySelectorAll(".profile-text p");
+      for (let p of paragraphs) {
+        let text = p.text.trim();
+        if (text.startsWith("作者：")) {
+          author = text.replace("作者：", "").trim();
+        } else if (text.startsWith("状态：")) {
+          status = text.replace("状态：", "").trim();
+        } else if (text.startsWith("更新：")) {
+          updateTime = text.replace("更新：", "").trim();
         }
       }
 
-      let tags = [];
-      for (let a of document.querySelectorAll(".tag-strip a")) {
-        tags.push(a.text.trim());
+      let tags = document
+        .querySelectorAll(".tag-strip a")
+        .map((e) => e.text.trim());
+
+      let description = "";
+      let descEl = document.querySelector(".intro-text");
+      if (descEl) {
+        description = descEl.text.trim();
       }
 
-      let description = document.querySelector(".intro-text")?.text?.trim() || "";
-
       let chapters = new Map();
-      for (let link of document.querySelectorAll("div[data-chapter-list] a")) {
+      let chapterLinks = document.querySelectorAll("[data-chapter-list] a");
+      for (let link of chapterLinks) {
         let href = link.attributes["href"];
         let epId = href.split("/").pop().replace(".html", "");
         let epTitle = link.text.trim();
@@ -231,26 +211,28 @@ class ManWaBa extends ComicSource {
       }
 
       let recommend = [];
-      let sections = document.querySelectorAll("section.content-section");
-      for (let section of sections) {
-        let h2 = section.querySelector("h2");
-        if (h2 && h2.text.trim() === "猜你喜欢") {
-          let cards = section.querySelectorAll("article.manga-card");
-          recommend = cards.map((e) => this.parseCard(e));
-          break;
-        }
+      let recommendCards = document.querySelectorAll(
+        ".manga-grid article.manga-card"
+      );
+      for (let card of recommendCards) {
+        let link = card.querySelector("a.manga-cover") || card.querySelector("a");
+        if (!link) continue;
+        let href = link.attributes["href"];
+        let recId = href.split("/").pop();
+        let img = link.querySelector("img");
+        let recTitle = img ? (img.attributes["alt"] || "") : "";
+        let recCover = img ? img.attributes["src"] : "";
+        recommend.push({ id: recId, title: recTitle, cover: recCover });
       }
-
-      document.dispose();
 
       return new ComicDetails({
         title: title,
         cover: cover,
         description: description,
         tags: {
-          作者: author ? [author] : [],
+          作者: [author],
           标签: tags,
-          状态: status ? [status] : [],
+          状态: [status],
         },
         chapters: chapters,
         recommend: recommend,
@@ -258,21 +240,14 @@ class ManWaBa extends ComicSource {
       });
     },
 
-    // 加载章节图片
     loadEp: async (comicId, epId) => {
-      let url = `${this.baseUrl}/book/${comicId}/${epId}.html`;
+      let url = this.baseUrl + "/book/" + comicId + "/" + epId + ".html";
       let res = await Network.get(url);
       if (res.status !== 200) {
         throw "Invalid status code: " + res.status;
       }
 
-      // res.body 可能是 string 或 ArrayBuffer，统一转为 string
-      let body = res.body;
-      if (typeof body !== "string") {
-        body = await Convert.decodeUtf8(body);
-      }
-
-      let paramsMatch = body.match(/params\s*=\s*'([^']+)'/);
+      let paramsMatch = res.body.match(/params\s*=\s*'([^']+)'/);
       if (!paramsMatch) {
         throw "Failed to extract params from chapter page";
       }
@@ -280,26 +255,28 @@ class ManWaBa extends ComicSource {
 
       let decrypted = await this.decryptParams(params);
 
-      let host =
-        (decrypted.images_hosts && decrypted.images_hosts[0]) ||
-        decrypted.images_domain ||
-        decrypted.cdnurl ||
-        "";
+      let host = "";
+      if (decrypted.images_hosts && decrypted.images_hosts.length > 0) {
+        host = decrypted.images_hosts[0];
+      } else if (decrypted.images_domain) {
+        host = decrypted.images_domain;
+      } else if (decrypted.cdnurl) {
+        host = decrypted.cdnurl;
+      }
       if (!host) {
         throw "No image host found";
       }
 
-      let chapterImages = decrypted.chapter_images || [];
-      if (chapterImages.length === 0) {
-        throw "No chapter images found";
-      }
-
-      let images = chapterImages.map((path) => `${host}/${path}`);
+      let images = decrypted.chapter_images.map((path) => {
+        if (/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(path)) {
+          return path;
+        }
+        return host.replace(/\/+$/, "") + "/" + path.replace(/^\/+/, "");
+      });
 
       return { images: images };
     },
 
-    // 图片加载配置(附带 Referer 头)
     onImageLoad: (url, comicId, epId) => {
       return {
         url: url,
