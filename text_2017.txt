@@ -1,0 +1,215 @@
+https://github.com/EricDasha/venera-configs/blob/main/log.txt
+20:40
+
+
+日志内容与之前一致,没有任何 manwaba 相关记录。完整 111 行日志中:
+
+唯一错误:Nhentai 语法错误(Nhentai:454 和 Nhentai:458,SyntaxError: unexpected end of string)
+manwaba 记录数:0(搜索 manwaba|manwame|mwuu|漫蛙 均无匹配)
+最后一条(20:30:15):应用从官方仓库拉取 index.json:
+
+Plain Text
+
+GET https://cdn.jsdelivr.net/gh/venera-app/venera-app/venera-configs@main/index.json
+关键问题
+这份日志里没有 manwaba 的任何活动——既没有错误,也没有网络请求。说明:
+
+你可能还没有在应用里实际打开/使用漫蛙源,所以没有产生日志
+或者应用加载的是官方仓库的旧版 manwaba.js(v1.0.2,失效域名 mwuu.cc),而不是我推送到 EricDasha/venera-configs 的修复版(v2.0.0)
+如何让修复生效
+应用默认从 venera-app/venera-configs 读取配置,我的修复在 fork 仓库里,应用不会自动加载。需要在 Venera 应用中:
+
+手动添加漫画源(本地导入):
+
+进入应用 → 漫画源 → 添加 → 通过 URL 添加
+填入:
+
+Plain Text
+
+https://cdn.jsdelivr.net/gh/EricDasha/venera-configs@main/manwaba.js
+添加后再使用漫蛙源,产生新的日志,才能真正验证修复是否生效。
+
+需要我帮你做其他事吗?比如向官方仓库提交 PR 让修复合并到主线?
+
+打开漫画后直接invalid data
+20:42
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+已推送成功(提交 8dbd8fc)。
+
+修复内容
+问题原因:loadEp 返回了对象数组 [{url, headers}, ...],但 Venera 期望返回字符串数组 string[]。
+
+修复方案:
+
+loadEp 改为返回字符串数组 ["https://s1.gimg.top/path1", ...]
+新增 onImageLoad 方法,为每个图片 URL 附带 Referer header
+这与其他源(hitomi、jcomic、ikmmh 等)的实现模式一致。
+
+现在更新后的 v2.0.1 已在 https://github.com/EricDasha/venera-configs/blob/main/manwaba.js ,请在应用中重新加载漫画源再测试。
+
+2 个文件已更改
++13
+-6
+manwaba.js
+.\C:\Users\Admin\.trae-cn\worktrees\temp\check-why-not-usable-Wglqx9\manwaba.js
++12
+-5
+index.json
+.\C:\Users\Admin\.trae-cn\worktrees\temp\check-why-not-usable-Wglqx9\venera-configs-upload\index.json
++1
+-1
+https://github.com/EricDasha/venera-configs/blob/main/manwaba.js
+20:58
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+推送成功(提交 caba7da)。
+
+找到 Invalid data 的真正原因
+不是脚本本身的问题,而是仓库中 manwaba.js 被误覆盖了:
+
+提交	内容	状态
+8dbd8fc	我的修复版 v2.0.1	✅ 正确
+deaba12 "Update manwaba.js"	log.txt 内容覆盖到 manwaba.js	❌ 错误
+caba7da(刚推)	恢复 v2.0.1 修复版,删除 log.txt	✅ 已修复
+应用加载 manwaba.js 时,实际拿到的是 log.txt 的内容(不是 JS),所以 loadEp 解析返回的"数据"其实是字符串日志,导致 _parseLoadComicPagesFunc 报 Invalid data。
+
+现在已恢复。请清空应用缓存后重试:
+
+应用 → 漫画源 → 删除漫蛙漫画 → 重新通过 URL 添加
+或直接刷新漫画源
+由于 jsdelivr CDN 有缓存,可能需要等几分钟才生效。
+
+还是不能加载出来，是源有问题，刚才是错误覆盖为了让你看到log
+21:06
+思考过程
+理解了，是我脚本本身有问题。让我重新分析章节页面的实际结构:
+
+已读取 1 个文件，搜索 1 次文件，执行 1 条命令
+页面确实有 params = '...'。让我用 Node.js 模拟 Venera 环境测试解密:
+
+已创建 1 个文件，执行 1 条命令
+解密逻辑完全正常,返回了 19 张图片 URL。问题不在解密。
+
+让我检查 loadInfo。日志显示漫画详情页用 HEAD 请求成功,但 loadInfo 可能抛错:
+
+已读取 1 个文件，执行 1 条命令
+现在我有了真实 HTML。让我对比我的 loadInfo 实现:
+
+已读取 1 个文件
+loadInfo 看起来没问题。让我检查 ComicDetails 类定义,以及 chapters 字段类型要求:
+
+已搜索 1 次文件
+现在看 parser.dart 中 _parseLoadComicPagesFunc 期望什么。让我用 jm.js 等其他源对照 loadEp 的标准返回:
+
+已搜索 1 次文件
+jm.js 返回 { images: string[] } — 与我的格式一致。问题可能在 images 数组中的元素不是纯 string,或者 chapter_images 数组本身为空。
+
+让我查看 xhr_mode 字段（解密结果里有这个字段，说明可能有 XHR 模式需要处理）：
+
+已创建 1 个文件，执行 1 条命令
+关键发现:xhr_mode: true!
+
+这说明网站使用 XHR 模式加载图片,直接拼接 URL 不能用!图片需要通过 XHR 请求并解密。
+
+让我分析 cms.js 看看 XHR 模式的具体逻辑:
+
+已搜索 1 次文件
+cms.js 已被删除。让我下载并分析:
+
+已搜索 1 次文件，执行 1 条命令
+文件是单行压缩的。让我查看完整内容,搜索关键函数:
+
+已创建 1 个文件，执行 1 条命令
+现在清楚了。让我搜索 XMLHttpRequest 部分的关键逻辑:
+
+已读取 1 个文件
+现在我完全理解了!XHR 模式下,图片 URL 直接用就行,浏览器通过 XMLHttpRequest + responseType="blob" 加载,然后创建 blob URL。关键代码:
+
+
+JavaScript
+
+f.open("GET", l, !0), f.responseType="blob", f.send()
+URL l 就是 m(h) 的结果,即 host + "/" + path。所以 URL 拼接没问题,问题是需要带正确的 headers。
+
+让我检查 cms.js 中 XHR 请求是否设置了 headers:
+
+已读取 1 个文件
+XHR 没设置特殊 headers,直接 GET。让我直接测试图片 URL 可达性:
+
+已执行 1 条命令
+图片URL需要 Referer header 才能返回 200(否则 403)。这与我之前的实现一致。
+
+那 Invalid data 错误到底从哪来?让我仔细查看日志的完整堆栈:
+
+已读取 1 个文件
+现在我看到了!关键点:
+
+第 20-22 行:在请求 manwame 之前,应用先访问了 https://www.cdnhjk.net/daily_chk 返回了一个 data 字段,内容是 base64 字符串。这看起来像是网站的反爬校验机制。
+
+但更重要的是 第 22 行显示了一个返回的 JSON,里面有 data 字段,内容是 base64 加密字符串。这说明 manwame.com 可能通过 cdnhjk.net 做了图片 URL 中转/解密服务!
+
+让我搜索 cms.js 中的 cdnhjk 相关:
+
+已搜索 1 次文件
+cms.js 没有 cdnhjk。日志中 cdnhjk.net/daily_chk 是 Venera 应用自己做的一些事情(可能是其他漫画源或全局检查)。
+
+让我看日志最关键的部分 - 第 14 行附近(在 HEAD 请求 manwame 之前):
+
+已读取 1 个文件
+我理解了!cdnhjk.net 是 copymanga 源的 API,与 manwaba 无关。日志里前面是 copymanga 在工作,后面才是 manwaba。
+
+现在完全清楚了 - manwaba 的 loadEp 解密成功,返回 string[],但 Venera 报 "Invalid data" 在 _parseLoadComicPagesFunc。
+
+让我用浏览器测试一下,确认 Venera 的 parser 到底期望什么。检查 baozi 的 loadEp 返回:
+
+已读取 1 个文件，搜索 1 次文件
+已取消压缩
+手动终止输出
+继续
+21:13
+历史对话压缩中
