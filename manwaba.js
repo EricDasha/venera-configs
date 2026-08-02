@@ -2,7 +2,7 @@
 class ManWaBa extends ComicSource {
   name = "漫蛙漫画";
   key = "manwaba";
-  version = "2.0.0";
+  version = "2.0.1";
   minAppVersion = "1.4.0";
   url = "https://cdn.jsdelivr.net/gh/venera-app/venera-configs@main/manwaba.js";
 
@@ -279,12 +279,19 @@ class ManWaBa extends ComicSource {
         throw "No image host found";
       }
 
-      let images = decrypted.chapter_images.map((path) => ({
-        url: `${host}/${path}`,
-        headers: { Referer: this.baseUrl + "/" },
-      }));
+      let images = decrypted.chapter_images.map((path) => `${host}/${path}`);
 
       return { images: images };
+    },
+
+    // 图片加载配置(附带 Referer 头)
+    onImageLoad: (url, comicId, epId) => {
+      return {
+        url: url,
+        headers: {
+          referer: this.baseUrl + "/",
+        },
+      };
     },
   };
 }
