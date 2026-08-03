@@ -7,7 +7,7 @@ class Nhentai extends ComicSource {
     // unique id of the source
     key = "nhentai"
 
-    version = "1.1.1"
+    version = "1.1.2"
 
     minAppVersion = "1.0.0"
 
@@ -35,8 +35,16 @@ class Nhentai extends ComicSource {
             url: "https://nhentai.net/login/?next=/favorites/",
             checkStatus: (url, title) => {
                 let normalizedUrl = String(url || "").split("#")[0].split("?")[0]
-                return normalizedUrl === `${this.baseUrl}/favorites`
+                let normalizedTitle = String(title || "").trim().toLowerCase()
+                let reachedAuthenticatedPage = normalizedUrl === this.baseUrl
+                    || normalizedUrl === `${this.baseUrl}/`
+                    || normalizedUrl === `${this.baseUrl}/favorites`
                     || normalizedUrl.startsWith(`${this.baseUrl}/favorites/`)
+                    || normalizedUrl.startsWith(`${this.baseUrl}/user/`)
+                let loginCompletedWithoutRedirect = normalizedTitle.includes(
+                    "nhentai: hentai doujinshi and manga"
+                )
+                return reachedAuthenticatedPage || loginCompletedWithoutRedirect
             },
             onLoginSuccess: async () => {
                 // Keep the original cookie-sync flow. persistAuthFromCookies also
