@@ -2,7 +2,7 @@
 class ManWaBa extends ComicSource {
   name = "漫蛙漫画";
   key = "manwaba";
-  version = "2.0.4";
+  version = "2.0.5";
   minAppVersion = "1.4.0";
   url = "https://cdn.jsdelivr.net/gh/EricDasha/venera-configs@main/manwaba.js";
 
@@ -32,9 +32,21 @@ class ManWaBa extends ComicSource {
     return buf;
   }
 
+  /// 还原页面内联脚本的字符串转义 (\uXXXX / \xNN / \/ / \\)
+  /// 站点把 base64 塞进 JS 字符串时会转义 + 与 /, 不还原会污染 base64 流
+  unescapeJsString(s) {
+    if (s.indexOf("\\") < 0) return s;
+    return s
+      .replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16)))
+      .replace(/\\x([0-9a-fA-F]{2})/g, (_, h) => String.fromCharCode(parseInt(h, 16)))
+      .replace(/\\([\s\S])/g, "$1");
+  }
+
   /// 解密章节图片参数
   async decryptParams(params) {
     let key = this.hexToBytes(this.aesKeyHex);
+    params = this.unescapeJsString(params);
+    // base64 里可能有被 JS 转义带入的空白/换行, 一律剔除
     let encrypted = await Convert.decodeBase64(params);
     let view = new Uint8Array(encrypted);
     let iv = view.slice(0, 16).buffer;
@@ -298,11 +310,11 @@ class ManWaBa extends ComicSource {
         body = await Convert.decodeUtf8(body);
       }
 
-      let paramsMatch = body.match(/params\s*=\s*'([^']+)'/);
+      let paramsMatch = body.match(/params\s*=\s*(['"])([\s\S]+?)\1/);
       if (!paramsMatch) {
         throw "Failed to extract params from chapter page";
       }
-      let params = paramsMatch[1];
+      let params = paramsMatch[2];
 
       let decrypted = await this.decryptParams(params);
 
