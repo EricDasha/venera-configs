@@ -3,12 +3,12 @@
         "name": "拷贝漫画",
         "fileName": "copy_manga.js",
         "key": "copy_manga",
-        "version": "1.4.1"
+        "version": "1.4.3"
     },
     {
         "name": "拷贝漫画(多账号)",
         "fileName": "copy_manga_multi_accounts.js",
-        "key": "copy_manga",
+        "key": "copy_manga_multi_accounts",
         "version": "1.4.1"
     },
     {
@@ -39,7 +39,7 @@
         "name": "紳士漫畫",
         "fileName": "wnacg.js",
         "key": "wnacg",
-        "version": "1.0.5",
+        "version": "1.0.6",
         "description": "紳士漫畫漫畫源, 不能使用時請嘗試更換URL"
     },
     {
@@ -59,14 +59,14 @@
         "name": "MangaDex",
         "fileName": "manga_dex.js",
         "key": "manga_dex",
-        "version": "1.1.0",
-        "description": "Account feature is not supported yet."
+        "version": "1.2.0",
+        "description": "Forum login and comments are supported."
     },
     {
         "name": "爱看漫",
         "fileName": "ikmmh.js",
         "key": "ikmmh",
-        "version": "1.0.5"
+        "version": "1.0.6"
     },
     {
         "name": "少年ジャンプ＋",
@@ -126,7 +126,7 @@
         "name": "カドコミ",
         "fileName": "comic_walker.js",
         "key": "comic_walker",
-        "version": "1.0.0"
+        "version": "1.0.1"
     },
     {
         "name": "漫画1234",
